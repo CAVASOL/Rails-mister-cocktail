@@ -27,15 +27,5 @@ puts 'Database cleaned'
     file = URI.open(cocktail['strDrinkThumb'])
     new_cocktail.photo.attach(io: file, filename: "#{new_cocktail.name}.jpg", content_type: 'image/jpg')
     new_cocktail.save
-    i = 1
-    loop do
-      ingredient_name = cocktail["strIngredient#{i}"]
-      ingredient_description = cocktail["strMeasure#{i}"]
-      break if ingredient_name.nil?
-
-      new_ingredient = Ingredient.find_or_create_by(name: ingredient_name)
-      Dose.create(cocktail: new_cocktail, ingredient: new_ingredient, description: ingredient_description)
-      i += 1
-    end
   end
 end
