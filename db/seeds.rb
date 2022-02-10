@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-require 'faker'
 require 'open-uri'
 require 'json'
 require 'yaml'
@@ -15,8 +13,29 @@ puts 'Cleaning up database...'
 Cocktail.destroy_all
 puts 'Database cleaned'
 
-url = 'http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=#{query}'
-JSON.parse(URI.parse(url).open.read)['drinks'].each do |ingredient|
-  new_ingredient = Ingredient.create(name: ingredient['strIngredient'])
-  new_ingredient.save!
+('a'..'z').each do |letter|
+  url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
+  puts "getting #{letter}"
+  response = open(url).read
+  cocktail_repo = JSON.parse(response)
+  cocktails = cocktail_repo['drinks']
+  next if cocktails.nil?
+
+  cocktails = cocktail_repo['drinks'].sample(1)
+  cocktails.each do |cocktail|
+    new_cocktail = Cocktail.new(name: cocktail['strDrink'], instructions: cocktail['strInstructions'])
+    file = URI.open(cocktail['strDrinkThumb'])
+    new_cocktail.photo.attach(io: file, filename: "#{new_cocktail.name}.jpg", content_type: 'image/jpg')
+    new_cocktail.save
+    i = 1
+    loop do
+      ingredient_name = cocktail["strIngredient#{i}"]
+      ingredient_description = cocktail["strMeasure#{i}"]
+      break if ingredient_name.nil?
+
+      new_ingredient = Ingredient.find_or_create_by(name: ingredient_name)
+      Dose.create(cocktail: new_cocktail, ingredient: new_ingredient, description: ingredient_description)
+      i += 1
+    end
+  end
 end
