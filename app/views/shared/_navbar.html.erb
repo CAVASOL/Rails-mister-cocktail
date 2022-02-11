@@ -1,0 +1,33 @@
+<div class="navbar">
+  <% if controller_name == "cocktails" && action_name == "index" %>
+    <div class="icon">
+      <%= link_to '#', method: :get, class: "navbar-link" do %>
+        <i class="fa-solid fa-face-smile"></i>
+        <p class="text">Explore</p>
+      <% end %>
+      </div>
+  <% else controller_name == "cocktails" && action_name == "show"%>
+    <div class="icon">
+      <%= link_to '#', method: :get, class: "navbar-link" do %>
+        <i class="fa-solid fa-face-smile-wink"></i>
+        <p class="text">Home</p>
+      <% end %>
+     </div>
+  <% end %>
+
+
+    <div class="icon">
+      <%= link_to '#', method: :get, class: "navbar-link" do %>
+        <i class="fa-solid fa-martini-glass-citrus"></i>
+        <p class="text">New Receipe</p>
+      <% end %>
+    </div>
+
+    <div class="icon">
+      <%= link_to '#', method: :get, class: "navbar-link" do %>
+        <i class="fa-solid fa-bookmark"></i>
+        <p class="text">My Page</p>
+      <% end %>
+    </div>
+
+</div>
