@@ -13,21 +13,6 @@ puts 'Cleaning up database...'
 Cocktail.destroy_all
 puts 'Database cleaned'
 
-url = 'http://tmdb.lewagon.com/movie/top_rated'
-movies = JSON.parse(open("#{url}?page=1").read)['results']
-movies.each do |movie|
-  puts "Creating #{movie['title']}"
-  base_poster_url = 'https://image.tmdb.org/t/p/original'
-  Movie.create(
-    title: movie['title'],
-    overview: movie['overview'],
-    poster_url: "#{base_poster_url}#{movie['backdrop_path']}",
-    rating: movie['vote_average']
-  )
-end
-puts 'Movies created'
-
-
 def ingredients_creation
   url = "www.thecocktaildb.com/api/json/v1/1/search.php?i=#{query}"
   JSON.parse(URI.parse(url).open.read)['drinks'].each do |ingredient|
