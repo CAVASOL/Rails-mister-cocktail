@@ -14,7 +14,7 @@ Cocktail.destroy_all
 puts 'Database cleaned'
 
 def ingredients_creation
-  url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+  url = "www.thecocktaildb.com/api/json/v1/1/filter.php?i=#{query}"
   JSON.parse(URI.parse(url).open.read)['drinks'].each do |ingredient|
     new_ingredient = Ingredient.new(name: ingredient['strIngredient'])
     new_ingredient.save!
