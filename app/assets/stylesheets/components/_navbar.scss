@@ -1,18 +1,18 @@
 .navbar {
   display: flex;
-  background-color: #E3E4E5;
+  background-color: #E8E4E2;
   align-items: center;
   position: fixed;
   bottom: 0;
   width: 100vw;
   height: 64px;
   justify-content: space-around;
-  color: #555255;
+  color: #05192C;
   z-index: 2;
 }
 
 .icon {
-  color: #555255;
+  color: #05192C;
   text-align: center;
 
   i {
@@ -27,6 +27,6 @@
 }
 
 .navbar-link {
-  color: #555255;
+  color: #05192C;
   text-decoration: none;
 }
