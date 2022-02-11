@@ -12,8 +12,7 @@ class CocktailsController < ApplicationController
     end
   end
 
-  def explore
-    @cocktails = Cocktail.all
+  def explore;
   end
 
   def show
