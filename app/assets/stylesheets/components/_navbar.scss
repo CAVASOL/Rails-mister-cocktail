@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  background-color: #E3E4E5;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 64px;
+  justify-content: space-around;
+  color: #555255;
+  z-index: 2;
+}
+
+.icon {
+  color: #555255;
+  text-align: center;
+
+  i {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  .text {
+    font-size: 12px;
+    margin: 0px;
+  }
+}
+
+.navbar-link {
+  color: #555255;
+  text-decoration: none;
+}
