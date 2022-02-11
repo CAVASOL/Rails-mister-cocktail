@@ -66,10 +66,8 @@ end
 def seed_all
   ingredients_creation
   cocktails_creation
-  reviews_creation
+  doses_creation
 end
-
-seed_all
 
 # ('a'..'z').each do |letter|
 #   url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
