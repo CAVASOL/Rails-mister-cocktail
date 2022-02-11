@@ -13,19 +13,74 @@ puts 'Cleaning up database...'
 Cocktail.destroy_all
 puts 'Database cleaned'
 
-('a'..'z').each do |letter|
-  url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
-  puts "getting #{letter}"
-  response = open(url).read
-  cocktail_repo = JSON.parse(response)
-  cocktails = cocktail_repo['drinks']
-  next if cocktails.nil?
-
-  cocktails = cocktail_repo['drinks'].sample(1)
-  cocktails.each do |cocktail|
-    new_cocktail = Cocktail.new(name: cocktail['strDrink'], instruction: cocktail['strInstruction'])
-    file = URI.open(cocktail['strDrinkThumb'])
-    new_cocktail.photo.attach(io: file, filename: "#{new_cocktail.name}.jpg", content_type: 'image/jpg')
-    new_cocktail.save
+def ingredients_creation
+  url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+  JSON.parse(URI.parse(url).open.read)['drinks'].each do |ingredient|
+    new_ingredient = Ingredient.new(name: ingredient['strIngredient1'])
+    new_ingredient.save!
   end
 end
+
+def cocktails_creation
+  ('a'..'z').to_a.each do |letter|
+    url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
+    next if JSON.parse(URI.parse(url).open.read)['drinks'].nil?
+
+    make_doses_and_cocktails(url)
+  end
+end
+
+def make_doses_and_cocktails(url)
+  JSON.parse(URI.parse(url).open.read)['drinks'].each do |c|
+    doses_creation(c, create_cocktail(c))
+  end
+end
+
+def create_cocktail(cocktail)
+  new_cocktail = Cocktail.new(
+    name: cocktail['strDrink'],
+    instruction: cocktail['strInstructions'].gsub(/([\n|\r])/, '')
+  )
+  new_cocktail.photo.attach(
+    io: URI.parse(cocktail['strDrinkThumb']).open,
+    filename: cocktail['strDrinkThumb'][-15..-1]
+  )
+  new_cocktail.save if new_cocktail.valid?
+  new_cocktail
+end
+
+def doses_creation(cocktail, new_cocktail)
+  (1..5).to_a.each do |number|
+    next if cocktail["strMeasure#{number}"].nil? || Ingredient.find_by(
+      name: cocktail["strIngredient#{number}"]
+    ).nil?
+
+    dose = Dose.new(description: cocktail["strMeasure#{number}"])
+    ingredient = Ingredient.find_by(name: cocktail["strIngredient#{number}"])
+    dose.cocktail = new_cocktail
+    dose.ingredient = ingredient
+    dose.save! if dose.valid?
+  end
+end
+
+def seed_all
+  ingredients_creation
+  cocktails_creation
+  reviews_creation
+end
+
+seed_all
+
+# ('a'..'z').each do |letter|
+#   url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=#{letter}"
+#   puts "getting #{letter}"
+#   next if JSON.parse(open(url).read)['drinks'].nil?
+
+#   cocktails = cocktail_repo['drinks'].sample(1)
+#   cocktails.each do |cocktail|
+#     new_cocktail = Cocktail.new(name: cocktail['strDrink'], instruction: cocktail['strInstruction'])
+#     file = URI.open(cocktail['strDrinkThumb'])
+#     new_cocktail.photo.attach(io: file, filename: "#{new_cocktail.name}.jpg", content_type: 'image/jpg')
+#     new_cocktail.save
+#   end
+# end
