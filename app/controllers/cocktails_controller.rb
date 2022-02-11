@@ -4,8 +4,12 @@ class CocktailsController < ApplicationController
       @query = params[:query]
       @cocktails = Cocktail.where('name ILIKE ?', "%#{params[:query]}%")
     else
-      @cocktails = Cocktail.all
+      @cocktails = Cocktail.all.first(4)
     end
+  end
+
+  def explore
+    @cocktails = Cocktail.all
   end
 
   def show
