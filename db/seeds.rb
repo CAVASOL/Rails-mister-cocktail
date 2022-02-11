@@ -16,7 +16,7 @@ puts 'Database cleaned'
 def ingredients_creation
   url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
   JSON.parse(URI.parse(url).open.read)['drinks'].each do |ingredient|
-    new_ingredient = Ingredient.new(name: ingredient['strIngredient1'])
+    new_ingredient = Ingredient.new(name: ingredient['strIngredient'])
     new_ingredient.save!
   end
 end
