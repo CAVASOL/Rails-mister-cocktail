@@ -26,6 +26,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto:wght@100;300;400;700&display=swap');
+
+
 body {
   position: relative;
   margin: 0;
