@@ -1,0 +1,27 @@
+@import "new";
+
+body {
+  background-color: #05192C;
+}
+
+.title {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.title-top {
+  display: inline-flex;
+  color: #E8E4E2;
+  font-size: 36px;
+  margin: 0px;
+  font-weight:lighter;
+  font-family: 'Monoton', cursive;
+}
+
+.title-bottom {
+  color: #E8E4E2;
+  font-size: 40px;
+  margin: 0px;
+  font-weight: lighter;
+  font-family: 'Monoton', cursive;
+}
