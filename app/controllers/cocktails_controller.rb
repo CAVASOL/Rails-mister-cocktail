@@ -15,7 +15,9 @@ class CocktailsController < ApplicationController
     end
   end
 
-  def explore; end
+  def explore
+    @cockatils = Cocktail.all
+  end
 
   def show
     @cocktail = Cocktail.find(params[:id])
