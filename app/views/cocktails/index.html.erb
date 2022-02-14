@@ -7,19 +7,14 @@
 <form class="search-container" action="/cocktails">
   <input id="searchBar" class="searchbar" name="query" type="text" placeholder="Search Cocktail!" aria-label="Search">
 </form>
-<div class="container">
 
-  <div class="cards">
-  <% @cocktails.each do |cocktail| %>
-    <%= link_to cocktail_path(cocktail) do %>
-      <% if cocktail.photo.attached? %>
-        <div data-aos="fade-up" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :cover %>)">
-      <% else %>
-        <div data-aos="fade-up" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/phanremy/image/upload/v1573831744/cocktail_vyfoyx.jpg)">
-      <% end %>
-        <p style=""> <%= cocktail.name %> </p>
-      </div>
+
+<div class="container">
+  <div class="row">
+    <% @ingredients.each do |ingredient| %>
+      <ul>
+        <li><%= ingredient.name %></li>
+      </ul>
     <% end %>
-  <% end %>
   </div>
 </div>
