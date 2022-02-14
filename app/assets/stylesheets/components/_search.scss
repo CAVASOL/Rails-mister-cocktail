@@ -1,24 +1,21 @@
-// cocktails#index
-
 .search-container {
   display: flex;
   flex-direction: row;
   position: fixed;
   justify-content: center;
   align-items: center;
-  top: 160px;
-  position: fixed;
-  width: 100%;
+  top: 144px;
+  width: 100vw;
   height: 64px;
   z-index: 4;
   transition: 0.25s top ease-in-out;
 }
 
 .search-container-back {
-  box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.2);
-  background-color: #F4F4F4;
-  margin-top: 0;
-  width: 100%;
+  // box-shadow: 1px 1px 10px 2px rgba(0,0,0,0.2);
+  background-color: #05192C;
+  margin-top: 0px;
+  width: 100vw;
   height: 64px;
   align-items: center;
 }
@@ -31,13 +28,13 @@
   color: #555255;
   padding: 6px 10px;
   width: 180px;
-  height: 40px;
+  height: 32px;
   border: none;
   // font-family:
   // margin-top: 324px;
   font-size: 0.9em;
   font-weight: lighter;
-  border-bottom: white solid 2px;
+  // border-bottom: white solid 2px;
   transition: 0.3s;
   border-radius: 50px
 }
