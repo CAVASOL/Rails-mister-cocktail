@@ -7,3 +7,14 @@
 <form class="search-container" action="/cocktails">
   <input id="searchBar" class="searchbar" name="query" type="text" placeholder="Search Cocktail!" aria-label="Search">
 </form>
+
+
+
+<div class="container">
+  <div class="row">
+    <% @ingredients.each do |ingredient| %>
+      <h5>- <%= ingredient.name %></h5>
+    <% end %>
+  </div>
+
+</div>
