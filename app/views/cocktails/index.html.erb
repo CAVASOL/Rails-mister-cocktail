@@ -1,23 +1,28 @@
 
-<div class="title">
-  <h2 class="title-top" style="margin-right: 8px;">All</h2> <h2 class="title-top">that</h2>
-  <h2 class="title-bottom"> Cocktail </h2>
-</div>
 
 <form class="search-container" action="/cocktails">
   <input id="searchBar" class="searchbar" name="query" type="text" placeholder="Search Cocktail!" aria-label="Search">
 </form>
 
-<% @cockatils.each do |cocktail| %>
-  <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<div class="banner">
 
-<div class="container">
-  <div class="row">
-    <% @ingredients.each do |ingredient| %>
-      <ul>
-        <li><%= ingredient.name %></li>
-      </ul>
-    <% end %>
+  <div class="title">
+    <h2 class="title-top" style="margin-right: 8px;">All</h2> <h2 class="title-top">that</h2>
+    <h2 class="title-bottom"> Cocktail </h2>
   </div>
+
+  <% @cockatils.each do |cocktail| %>
+    <%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+
+  <div class="container">
+    <div class="row">
+      <% @ingredients.each do |ingredient| %>
+        <ul>
+          <li><%= ingredient.name %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+
 </div>
