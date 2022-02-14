@@ -5,6 +5,7 @@
 class CocktailsController < ApplicationController
   def index
     @ingredients = Ingredient.all
+    @cockatils = Cocktail.all
 
     if params[:query].present?
       @query = params[:query]
