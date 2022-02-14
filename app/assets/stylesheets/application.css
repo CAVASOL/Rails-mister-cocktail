@@ -21,7 +21,7 @@
 
 /* Your CSS partials */
 @import "components/index";
-@import "pages/index";
+@import "cocktails/index";
 
 /* Font Awesome */
 @import "font-awesome-sprockets";
