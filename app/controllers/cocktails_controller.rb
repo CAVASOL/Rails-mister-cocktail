@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-require 'open-uri'
+# require 'open-uri'
 # app/controllers/movies_controller.rb
 class CocktailsController < ApplicationController
   def index
     @ingredients = Ingredient.all
+    @cockatils = Cocktail.all
 
     if params[:query].present?
       @query = params[:query]
@@ -14,7 +15,9 @@ class CocktailsController < ApplicationController
     end
   end
 
-  def explore; end
+  def explore
+    @cockatils = Cocktail.all
+  end
 
   def show
     @cocktail = Cocktail.find(params[:id])
