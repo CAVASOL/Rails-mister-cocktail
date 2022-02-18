@@ -47,3 +47,15 @@ cocktail.save
   cocktail.photo.attach(io: file, filename: "#{cocktail.name}.jpg", content_type: 'image/jpg')
   cocktail.save
 end
+
+cocktail_1 = Cocktail.new(
+  name: 'Old fashioned',
+  instruction: 'Add the sugar and bitters to a rocks glass, then add the water,
+                and stir until the sugar is nearly dissolved. Fill the glass
+                with large ice cubes, add the bourbon, and gently stir to combine.
+                Express the oil of an orange peel over the glass, then drop in.'
+)
+
+pic_1 = URI.open('https://www.liquor.com/thmb/_0WLXSRV03SfpWgZ1hwiAkyIrzE=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__05__08113350__bourbon-old-fashioned-720x720-recipe-ade6f7780c304999be3577e565c9bcdd.jpg')
+cocktail_1.photo.attach(io: pic_1, filename: 'Old-fashioned.jpg', content_type: 'image/jpg')
+cocktail_1.save!
