@@ -59,3 +59,87 @@ cocktail_1 = Cocktail.new(
 pic_1 = URI.open('https://www.liquor.com/thmb/_0WLXSRV03SfpWgZ1hwiAkyIrzE=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__05__08113350__bourbon-old-fashioned-720x720-recipe-ade6f7780c304999be3577e565c9bcdd.jpg')
 cocktail_1.photo.attach(io: pic_1, filename: 'Old-fashioned.jpg', content_type: 'image/jpg')
 cocktail_1.save!
+
+cocktail_2 = Cocktail.new(
+  name: 'Negroni',
+  instruction: 'Add the gin, Campari and sweet vermouth to a mixing glass filled
+                with ice, and stir until well-chilled. Strain into a rocks glass
+                filled with large ice cubes. Garnish with an orange peel.'
+)
+
+pic_2 = URI.open('https://www.liquor.com/thmb/JxTOAr3j6QredEyM1IzcohLDZ80=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__05__08110806__negroni-720x720-recipe-7c1b747a616f4659af4008d025ab55df.jpg')
+cocktail_2.photo.attach(io: pic_2, filename: 'Negroni.jpg', content_type: 'image/jpg')
+cocktail_2.save!
+
+cocktail_3 = Cocktail.new(
+  name: 'Boiler Room',
+  instruction: 'Add the bourbon, ginger liqueur, marigold tea, lemon juice and
+                honey syrup into a pint glass filled with ice and stir to combine.
+                Top with the beer and stir again gently and briefly to combine.
+                Garnish with a long lemon twist.'
+)
+
+pic_3 = URI.open('https://www.liquor.com/thmb/Imhec3rSwSFeXkTFR1DXsBVNEvg=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/boiler-room-720x720-primary-63f1118775b94ee3a397adcb4a79baa3.jpg')
+cocktail_3.photo.attach(io: pic_3, filename: 'Boiler-room.jpg', content_type: 'image/jpg')
+cocktail_3.save!
+
+cocktail_4 = Cocktail.new(
+  name: 'Bourbon Rosemary Punch',
+  instruction: 'Combine the rosemary-infused Aperol, bourbon, honey syrup and
+                grapefruit juice in a punch bowl and add large ice cubes. For
+                each serving, ladle 3 ounces of punch into a punch glass filled
+                with ice cubes. Top with a splash of sparkling wine and a
+                splash of soda water. Garnish with a grapefruit wheel and a
+                rosemary sprig.'
+)
+
+pic_4 = URI.open('https://www.liquor.com/thmb/ULqlgHv_y76cLjwl8I87dc8m3VI=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__11__02092246__Bourbon-Rosemary-Punch-720x720-article-edb8d0ac38c443e992980a44da8595c7.jpg')
+cocktail_4.photo.attach(io: pic_4, filename: 'Bourbon-rosemary.jpg', content_type: 'image/jpg')
+cocktail_4.save!
+
+cocktail_5 = Cocktail.new(
+  name: 'Bourbon Strawberry Iced Tea',
+  instruction: 'Add the strawberries and lemon juice into a shaker and gently muddle.
+                Add the bourbon and simple syrup, add ice, and shake until well-chilled.
+                Strain into a Collins glass over fresh ice. Top with unsweetened iced tea.
+                Garnish with skewered blueberries and strawberries and a mint sprig.'
+)
+
+pic_5 = URI.open('https://www.liquor.com/thmb/7j9XEFuyCpgFK7qI29s37xmjhYw=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__06__04100618__bourbon-strawberry-iced-tea-720x720-article-6163c34005fd4c13bfaba53ad19d6508.jpg')
+cocktail_5.photo.attach(io: pic_5, filename: 'Iced-tea.jpg', content_type: 'image/jpg')
+cocktail_5.save!
+
+cocktail_6 = Cocktail.new(
+  name: 'Bordeaux Sour',
+  instruction: 'In a shaker, muddle the cherry and maple syrup. Add the bourbon,
+                red wine, lemon juice and orange bitters with ice, and shake until
+                well-chilled. Double-strain into a rocks glass over fresh ice.
+                Garnish with a maraschino cherry.'
+)
+
+pic_6 = URI.open('https://www.liquor.com/thmb/7XwmNjvQVwSC91eBZAASnc--BII=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/boudreaux-sour-720x720-primary-a40f160e21fe4171b86a9c41a9e62a75.jpg')
+cocktail_6.photo.attach(io: pic_6, filename: 'Bordeaux-sour.jpg', content_type: 'image/jpg')
+cocktail_6.save!
+
+cocktail_7 = Cocktail.new(
+  name: 'Manhattan',
+  instruction: 'Add the bourbon (or rye), sweet vermouth and both bitters to a
+                mixing glass with ice, and stir until well-chilled. Strain into
+                a chilled coupe. Garnish with a brandied cherry or a lemon twist.'
+)
+
+pic_7 = URI.open('https://www.liquor.com/thmb/juGAUFgLo8gEc_ri0dRVzNwS8ic=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2018__05__10144903__Manhattan-720x720-recipe-9497922907c14d91898f557cb51f2ea3.jpg')
+cocktail_7.photo.attach(io: pic_7, filename: 'Manhattan.jpg', content_type: 'image/jpg')
+cocktail_7.save!
+
+cocktail_8 = Cocktail.new(
+  name: 'Millionaire',
+  instruction: 'Add the bourbon, Grand Marnier, absinthe, grenadine, egg white
+                and lemon juice into a shaker and dry-shake (without ice) vigorously.
+                Add ice and shake again until well-chilled. Double-strain into a
+                chilled coupe glass. Grate nutmeg over the top of the drink.'
+)
+
+pic_8 = URI.open('https://www.liquor.com/thmb/Nh3ehdtL3G-IjP2dHCj5yalG6zw=/720x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2019__10__15112904__millionaire-720x720-recipe-6959113ea8e045fe974e29b50b933440.jpg')
+cocktail_8.photo.attach(io: pic_8, filename: 'Millionaire.jpg', content_type: 'image/jpg')
+cocktail_8.save!
