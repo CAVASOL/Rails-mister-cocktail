@@ -12,27 +12,7 @@
   </div>
 
   <% @cockatils.each do |cocktail| %>
-    <%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag cocktail.photo.key, height: 160, width: 160, crop: :fill %>
   <% end %>
 
-  <div class="container">
-    <div class="row">
-      <% @ingredients.each do |ingredient| %>
-        <ul style="color: #FFFFFF;">
-          <li><%= ingredient.name %></li>
-        </ul>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="cards py-3">
-    <% @cocktails.each do |cocktail| %>
-        <%= link_to cocktail do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
-            <%= cocktail.name %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
 </div>
