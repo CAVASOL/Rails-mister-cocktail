@@ -8,7 +8,7 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 5.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 gem "autoprefixer-rails", "10.2.5"
 gem "font-awesome-sass", "~> 5.15"
 gem "simple_form"
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
