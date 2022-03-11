@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-# require 'open-uri'
-# app/controllers/movies_controller.rb
+# app/controllers/cocktails_controller.rb
 class CocktailsController < ApplicationController
   def index
     @ingredients = Ingredient.all
