@@ -1,4 +1,6 @@
 class Cocktail < ApplicationRecord
+  acts_as_favoritable
+
   has_one_attached :photo
 
   has_many :doses, dependent: :destroy
