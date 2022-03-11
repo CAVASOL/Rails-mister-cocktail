@@ -2,6 +2,8 @@
 
 # app/controllers/cocktails_controller.rb
 class CocktailsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index explore show]
+
   def index
     @ingredients = Ingredient.all
     @cockatils = Cocktail.all
@@ -32,6 +34,7 @@ class CocktailsController < ApplicationController
   def create
     @cocktails = Cocktail.all
     @cocktail = Cocktail.new(cocktail_params)
+    @cockatil.user = current_user
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
