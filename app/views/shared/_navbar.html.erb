@@ -10,14 +10,14 @@
     <div class="icon">
       <%= link_to explore_path, method: :get, class: "navbar-link" do %>
         <i class="fa-solid fa-face-smile-wink" style="color: #B43B3B"></i>
-        <p class="text">Explore</p>
+        <p class="text" style="color: #B43B3B">Explore</p>
       <% end %>
     </div>
   <% elsif controller_name == "cocktails" && action_name == "explore" %>
     <div class="icon">
       <%= link_to root_path, method: :get, class: "navbar-link" do %>
         <i class="fa-solid fa-face-smile-wink" style="color: #B43B3B"></i>
-        <p class="text">Home</p>
+        <p class="text" style="color: #B43B3B">Home</p>
       <% end %>
     </div>
   <% else %>
@@ -33,7 +33,7 @@
     <div class="icon">
       <%= link_to new_cocktail_path, method: :get, class: "navbar-link" do %>
         <i class="fa-solid fa-martini-glass-citrus" style="color: #B43B3B"></i>
-        <p class="text">New Receipe</p>
+        <p class="text" style="color: #B43B3B">New Receipe</p>
       <% end %>
     </div>
   <% else %>
@@ -50,21 +50,14 @@
     <div class="icon">
       <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
         <i class="fa-solid fa-bookmark" style="color: #B43B3B"></i>
-        <p class="text">My page</p>
+        <p class="text" style="color: #B43B3B">My page</p>
       <% end %>
     </div>
-  <% elsif controller_name == "cocktails" && action_name == "show" && user_signed_in? %>
+  <% elsif controller_name == "users" && action_name == "show" %>
     <div class="icon">
       <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
         <i class="fa-solid fa-bookmark" style="color: #B43B3B"></i>
-        <p class="text">My page</p>
-      <% end %>
-    </div>
-  <% elsif controller_name == "users" && action_name == "show" && user_signed_in? %>
-    <div class="icon">
-      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
-        <i class="fa-solid fa-bookmark" style="color: #B43B3B"></i>
-        <p class="text">My page</p>
+        <p class="text" style="color: #B43B3B">My page</p>
       <% end %>
     </div>
   <% else %>
@@ -75,65 +68,5 @@
       <% end %>
     </div>
   <% end %>
-
-  <% if user_signed_in? %>
-    <% if controller_name == "pages" && action_name == "profile" %>
-      <div class="icon">
-        <%= link_to profile_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #B43B3B"></i>
-          <p class="text">Profile</p>
-        <% end %>
-      </div>
-    <% elsif controller_name == "registrations" && action_name == "edit" %>
-      <div class="icon">
-        <%= link_to edit_user_registration_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #B43B3B"></i>
-          <p class="text">Profile</p>
-        <% end %>
-      </div>
-    <% elsif %>
-      <div class="icon">
-        <%= link_to profile_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle"></i>
-          <p class="text">Profile</p>
-        <% end %>
-      </div>
-    <% end %>
-  <% else %>
-    <% if controller_name == "sessions" && action_name == "new" %>
-      <div class="icon">
-        <%= link_to new_user_session_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #B43B3B"></i>
-          <p class="text">Log in</p>
-        <% end %>
-      </div>
-    <% elsif controller_name == "registrations" && action_name == "new" %>
-      <div class="icon">
-        <%= link_to new_user_session_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #B43B3B"></i>
-          <p class="text">Log in</p>
-        <% end %>
-      </div>
-    <% elsif controller_name == "passwords" && action_name == "new" %>
-      <div class="icon">
-        <%= link_to new_user_session_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #B43B3B"></i>
-          <p class="text">Log in</p>
-        <% end %>
-      </div>
-    <% elsif %>
-      <div class="icon">
-        <%= link_to new_user_session_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle"></i>
-          <p class="text">Log in</p>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
-
-
-
-
-
 
 </div>
