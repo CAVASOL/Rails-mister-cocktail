@@ -2,10 +2,23 @@
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: white;
+  margin: 0;
+  margin-top: 56px;
+  margin-bottom: 80px;
 
-  .footer-text {
+  & .footer-text {
     font-size: 16px;
-    margin-top: 32px;
-    margin-bottom: 80px;
+  }
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+
+  & p {
+    font-size: 48px;
+    padding: 0 8px;
+    margin: 0;
   }
 }
