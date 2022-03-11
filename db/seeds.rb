@@ -48,6 +48,14 @@ cocktail.save
   cocktail.save
 end
 
+5.times do |i|
+  User.new(
+    name: Faker::Name.name,
+    email: "user_#{i + 1}@email.com",
+    password: '123456'
+  ).save!
+end
+
 cocktail_1 = Cocktail.new(
   name: 'Old fashioned',
   instruction: 'Add the sugar and bitters to a rocks glass, then add the water,
