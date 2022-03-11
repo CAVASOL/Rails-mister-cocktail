@@ -62,15 +62,15 @@
     </div>
   <% elsif controller_name == "users" && action_name == "show" && user_signed_in? %>
     <div class="icon">
-      <%= link_to users_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
-        <i class="fas fa-globe-asia" style="color: #CE326A"></i>
-        <p class="text" style="color: #CE326A">My page</p>
+      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+        <i class="fa-solid fa-bookmark" style="color: #B43B3B"></i>
+        <p class="text">My page</p>
       <% end %>
     </div>
   <% else %>
     <div class="icon">
-      <%= link_to dashboard_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
-        <i class="far fa-heart"></i>
+      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+        <i class="fa-solid fa-bookmark"></i>
         <p class="text">My page</p>
       <% end %>
     </div>
@@ -80,15 +80,15 @@
     <% if controller_name == "pages" && action_name == "profile" %>
       <div class="icon">
         <%= link_to profile_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #CE326A"></i>
-          <p class="text" style="color: #CE326A">Profile</p>
+          <i class="far fa-user-circle" style="color: #B43B3B"></i>
+          <p class="text">Profile</p>
         <% end %>
       </div>
     <% elsif controller_name == "registrations" && action_name == "edit" %>
       <div class="icon">
         <%= link_to edit_user_registration_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #CE326A"></i>
-          <p class="text" style="color: #CE326A">Profile</p>
+          <i class="far fa-user-circle" style="color: #B43B3B"></i>
+          <p class="text">Profile</p>
         <% end %>
       </div>
     <% elsif %>
@@ -103,22 +103,22 @@
     <% if controller_name == "sessions" && action_name == "new" %>
       <div class="icon">
         <%= link_to new_user_session_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #CE326A"></i>
-          <p class="text" style="color: #CE326A">Log in</p>
+          <i class="far fa-user-circle" style="color: #B43B3B"></i>
+          <p class="text">Log in</p>
         <% end %>
       </div>
     <% elsif controller_name == "registrations" && action_name == "new" %>
       <div class="icon">
         <%= link_to new_user_session_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #CE326A"></i>
-          <p class="text" style="color: #CE326A">Log in</p>
+          <i class="far fa-user-circle" style="color: #B43B3B"></i>
+          <p class="text">Log in</p>
         <% end %>
       </div>
     <% elsif controller_name == "passwords" && action_name == "new" %>
       <div class="icon">
         <%= link_to new_user_session_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #CE326A"></i>
-          <p class="text" style="color: #CE326A">Log in</p>
+          <i class="far fa-user-circle" style="color: #B43B3B"></i>
+          <p class="text">Log in</p>
         <% end %>
       </div>
     <% elsif %>
