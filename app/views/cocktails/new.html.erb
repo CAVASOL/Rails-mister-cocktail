@@ -5,7 +5,7 @@
           <h3 class="new-cocktail">Create a new cocktail!</h3>
             <%= simple_form_for @cocktail do |c| %>
               <%= c.input :name %>
-              <%= c.input :instruction, placeholder: 'Note nstruction' %>
+              <%= c.input :instruction %>
               <%= c.input :photo, as: :file %>
               <%= c.submit class: 'btn btn-secondary' %>
             <% end %>

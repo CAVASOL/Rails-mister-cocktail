@@ -28,6 +28,7 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
+    @reviews = Review.all
   end
 
   def new
@@ -66,6 +67,8 @@ class CocktailsController < ApplicationController
     @cocktail.desctroy
     redirect_to cocktails_path
   end
+
+  def mypage; end
 
   private
 

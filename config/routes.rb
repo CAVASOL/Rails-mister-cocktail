@@ -17,5 +17,5 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: 'users#show', as: 'users'
   get 'explore', to: 'cocktails#explore', as: 'explore'
-  get 'mypage', to: 'pages#mypage', as: 'mypage'
+  get 'mypage', to: 'cocktails#mypage', as: 'mypage'
 end
