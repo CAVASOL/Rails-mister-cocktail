@@ -5,19 +5,25 @@ class CocktailsController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[index explore show]
 
   def index
-    @ingredients = Ingredient.all
-    @cockatils = Cocktail.all
+    @cocktails = Cocktail.all
 
     if params[:query].present?
       @query = params[:query]
       @cocktails = Cocktail.where('name ILIKE ?', "%#{params[:query]}%")
     else
-      @cocktails = Cocktail.all.first(4)
+      @cocktails = Cocktail.all
     end
   end
 
   def explore
-    @cockatils = Cocktail.all
+    @cocktails = Cocktail.all
+
+    if params[:query].present?
+      @query = params[:query]
+      @cocktails = Cocktail.where('name ILIKE ?', "%#{params[:query]}%")
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show

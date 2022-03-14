@@ -1,3 +1,28 @@
-<div>
-  <h1>hahahahahahah</h1>
+<div class="explore-search mt-5">
+  <form class="index-form-inline" action="/explore">
+    <input class="index-search-bar" type="search" name="query" placeholder="Cocktail?" aria-label="Search">
+  </form>
 </div>
+
+<div class="search-guide">
+  <% if @query.present? %>
+    <p> Returning search for "<strong><%= @query %></strong>" </p>
+  <% else %>
+    <p> What are you looking for? </p>
+  <% end %>
+</div>
+
+<div class="row">
+  <div>
+    <h5 class="index-subtitle"> Cocktails ( <%= @cocktails.length %> ) </h5>
+  </div>
+  <div class="samples">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail), class: "text-dark text-decoration-none" do %>
+        <%= cl_image_tag cocktail.photo.key, height: 140, width: 160, crop: :fill %>
+      <% end%>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
