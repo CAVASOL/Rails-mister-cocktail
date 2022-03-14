@@ -1,6 +1,16 @@
-<div class="cockatil-detail">
-  <ul>
-    <li> Name : <%= @cocktail.name %></li>
-    <li> instruction : <%= @cocktail.instruction %></li>
-  </ul>
+<div class="top-nav">
+  <p class=> <i class="fa-solid fa-angles-left"></i> <%= link_to "Back", :back, class: "back" %></p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="show-title"><%= @cocktail.name %></p>
+    <div class="cocktail-img">
+      <%= cl_image_tag @cocktail.photo.key, height: 240, width: 320, crop: :fill %>
+    </div>
+    <div class="detail">
+      <p><i class="fa-solid fa-circle-info mr-3"></i> Instruction</p>
+      <p><%= @cocktail.instruction %></p>
+    </div>
+  </div>
 </div>
