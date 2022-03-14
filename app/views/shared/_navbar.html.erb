@@ -2,29 +2,29 @@
   <% if controller_name == "cocktails" && action_name == "index" %>
     <div class="icon">
       <%= link_to explore_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-face-smile"></i>
-        <p class="text">Explore</p>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <p class="text"> Explore </p>
       <% end %>
     </div>
   <% elsif controller_name == "cocktails" && action_name == "show" %>
     <div class="icon">
       <%= link_to explore_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-face-smile-wink" style="color: #B43B3B"></i>
-        <p class="text" style="color: #B43B3B">Explore</p>
+        <i class="fa-solid fa-magnifying-glass" style="color: #B43B3B"></i>
+        <p class="text" style="color: #B43B3B"> Explore </p>
       <% end %>
     </div>
   <% elsif controller_name == "cocktails" && action_name == "explore" %>
     <div class="icon">
       <%= link_to root_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-face-smile-wink" style="color: #B43B3B"></i>
-        <p class="text" style="color: #B43B3B">Home</p>
+        <i class="fa-solid fa-martini-glass-citrus" style="color: #B43B3B"></i>
+        <p class="text" style="color: #B43B3B"> Home </p>
       <% end %>
     </div>
   <% else %>
     <div class="icon">
       <%= link_to cocktails_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-face-smile"></i>
-        <p class="text">Home</p>
+        <i class="fa-solid fa-martini-glass-citrus"></i>
+        <p class="text"> Home </p>
       <% end %>
     </div>
   <% end %>
@@ -32,39 +32,31 @@
   <% if controller_name == "cocktails" && action_name == "new" %>
     <div class="icon">
       <%= link_to new_cocktail_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-martini-glass-citrus" style="color: #B43B3B"></i>
-        <p class="text" style="color: #B43B3B">New Receipe</p>
+        <i class="fa-solid fa-martini-glass" style="color: #B43B3B"></i>
+        <p class="text" style="color: #B43B3B"> New Receipe </p>
       <% end %>
     </div>
   <% else %>
     <div class="icon">
       <%= link_to new_cocktail_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-martini-glass-citrus"></i>
-        <p class="text">New Receipe</p>
+        <i class="fa-solid fa-martini-glass-empty"></i>
+        <p class="text"> New Receipe </p>
       <% end %>
     </div>
   <% end %>
 
-
-  <% if controller_name == "pages" && action_name == "mypage" %>
+  <% if controller_name == "cocktails" && action_name == "mypage" %>
     <div class="icon">
       <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
-        <i class="fa-solid fa-bookmark" style="color: #B43B3B"></i>
-        <p class="text" style="color: #B43B3B">My page</p>
-      <% end %>
-    </div>
-  <% elsif controller_name == "users" && action_name == "show" %>
-    <div class="icon">
-      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
-        <i class="fa-solid fa-bookmark" style="color: #B43B3B"></i>
-        <p class="text" style="color: #B43B3B">My page</p>
+        <i class="fa-solid fa-face-smile-wink" style="color: #B43B3B"></i>
+        <p class="text" style="color: #B43B3B"> My page </p>
       <% end %>
     </div>
   <% else %>
     <div class="icon">
       <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
-        <i class="fa-solid fa-bookmark"></i>
-        <p class="text">My page</p>
+        <i class="fa-solid fa-face-smile"></i>
+        <p class="text"> My page </p>
       <% end %>
     </div>
   <% end %>
