@@ -23,19 +23,15 @@
   display: flex;
   justify-content: center;
   float: right;
-  // background-color: none;
-  color: #555255;
   padding: 6px 10px;
-  width: 180px;
+  width: 220px;
   height: 32px;
   border: none;
-  // font-family:
-  // margin-top: 324px;
   font-size: 0.9em;
   font-weight: lighter;
   // border-bottom: white solid 2px;
   transition: 0.3s;
-  border-radius: 50px
+  border-radius: 4px
 }
 
 .searchbar::placeholder {
@@ -48,7 +44,7 @@
 }
 
 .searchbar:focus {
-  width: 280px;
+  width: 240px;
   // font-family:
   font-size: 1em;
   font-weight: bold;
