@@ -1,0 +1,13 @@
+<div class="top-nav">
+  <p class=> <i class="fa-solid fa-angles-left"></i> <%= link_to "Back", :back, class: "back" %></p>
+</div>
+
+<div class="new-dose">
+  <h3>Add new ingredient</h3>
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+    <%= f.input :description %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
