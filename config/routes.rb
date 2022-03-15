@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :cocktails do
     resources :ingredients, only: %i[create]
-    resources :doses, only: %i[create]
+    resources :doses, only: %i[new create edit update]
     resources :reviews, only: %i[new create edit update]
     resources :favorites, only: [:create]
     delete 'favorites', to: 'favorites#destroy'
