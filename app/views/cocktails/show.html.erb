@@ -51,7 +51,7 @@
       </table>
     </div>
 
-    <div class="detail">
+    <div class="detail mt-5">
       <p><i class="fa-solid fa-bookmark"></i> Reviews </p>
       <% if @cocktail.reviews.empty? %>
         <p>Be the first to let a review!</p>
@@ -71,7 +71,6 @@
           <% end %>
         </ul>
       <% end %>
-      <%= render "reviews/new", cocktail: @cocktail, review: @review %>
     </div>
 
   </div>
