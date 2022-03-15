@@ -68,6 +68,9 @@
                 <% end %>
               </span>
               <%= review.author %> - <%= review.comment %>
+              <%= link_to review_path(review), method: :delete, class: "tablecon-d", data: { confirm: "Are you sure?" } do %>
+                <i class="fa-regular fa-trash-can"></i>
+              <% end %>
             <% end %>
           </div>
         </div>
