@@ -27,13 +27,4 @@
   </div>
 </div>
 
-<div class="ingredients">
-  <div class="row">
-    <p> Ingredient ( <%= @ingredients.length %> ) </p>
-    <% @ingredients.each do |ingredient| %>
-      <li><%= ingredient.name %></li>
-    <% end %>
-  </div>
-</div>
-
 <%= render 'shared/footer' %>
