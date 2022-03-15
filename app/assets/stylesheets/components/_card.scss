@@ -12,8 +12,46 @@
   align-items: center;
   margin: 0;
   padding: 0;
+  height: 140px;
+  width: 160px;
+  background-size: cover;
+  border-radius: 4px;
 
-  a {
+  a, p {
+    text-decoration: none;
+    color:white;
+    text-align: center;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.cocktails {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.cocktail-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+
+
+  a, p {
     text-decoration: none;
     color:white;
 

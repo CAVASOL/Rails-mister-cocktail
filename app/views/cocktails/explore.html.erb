@@ -16,10 +16,12 @@
   <div>
     <h5 class="index-subtitle"> Cocktails ( <%= @cocktails.length %> ) </h5>
   </div>
-  <div class="samples">
+  <div class="cocktails">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail), class: "text-dark text-decoration-none" do %>
-        <%= cl_image_tag cocktail.photo.key, height: 140, width: 160, crop: :fill %>
+        <div class="cocktail-card" data-aos="zoon-in" style="background-image: url('<%= cl_image_path cocktail.photo.key %>')">
+          <p> <%= cocktail.name %> </p>
+        </div>
       <% end%>
     <% end %>
   </div>
