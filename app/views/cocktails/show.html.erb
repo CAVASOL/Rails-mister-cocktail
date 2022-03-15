@@ -52,6 +52,9 @@
     </div>
 
     <div class="detail mt-5">
+      <div class="new-review">
+        <%= link_to "New Review", new_cocktail_review_path(@review), cocktail: @cocktail, review: @review, class: "new-review" %>
+      </div>
       <p><i class="fa-solid fa-bookmark"></i> Reviews </p>
       <% if @cocktail.reviews.empty? %>
         <p>Be the first to let a review!</p>
