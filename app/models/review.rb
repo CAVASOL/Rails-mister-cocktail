@@ -4,6 +4,6 @@ class Review < ApplicationRecord
   belongs_to :cocktail
 
   validates :author, presence: true
-  validates :content, presence: true
+  validates :comment, presence: true
   validates :rating, presence: true, inclusion: { in: RATINGS }
 end
