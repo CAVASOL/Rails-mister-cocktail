@@ -15,9 +15,13 @@
 }
 
 .table  {
-  border: 1px solid white;
+  border: 1px dotted white;
   width: 320px;
   text-align: center;
+  // border-style: dotted;
+  border-radius: 8px;
+  padding: 4px;
+  font-size: 12px;
 }
 
 .tablecon-e {
