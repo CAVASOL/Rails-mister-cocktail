@@ -1,8 +1,14 @@
-<h3>Add a review</h3>
+<div class="top-nav">
+  <p class=> <i class="fa-solid fa-angles-left"></i> <%= link_to "Back", :back, class: "back" %></p>
+</div>
 
-<%= simple_form_for [@cocktail, @review] do |f| %>
-  <%= f.input :rating, collection: 0..5 %>
-  <%= f.input :author %>
-  <%= f.input :comment %>
-  <%= f.submit class: "btn btn-primary"%>
-<% end %>
+<div class="new-review">
+  <h3>New Review</h3>
+
+  <%= simple_form_for [cocktail(@cocktail), @review] do |f| %>
+    <%= f.input :rating, collection: 0..5 %>
+    <%= f.input :author %>
+    <%= f.input :comment %>
+    <%= f.submit class: "btn btn-primary"%>
+  <% end %>
+</div>
