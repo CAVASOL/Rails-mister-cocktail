@@ -15,19 +15,18 @@
     </div>
 
     <div class="detail">
-      <%= link_to %>
       <table class="table table-bordered">
         <thead>
           <th>Ingredient</th>
           <th>Description</th>
-          <th>Action</th>
+          <th>Delete</th>
         </thead>
         <tbody>
           <% if @cocktail.doses.empty? %>
             <tr>
               <td><p> 0 </p></td>
               <td><p> 0 </p></td>
-              <td><p> 0 </p></td>
+              <td><p> <i class="fa-solid fa-check"></i> </p></td>
             </tr>
           <% else %>
             <% @cocktail.doses.each do |dose| %>
@@ -36,7 +35,7 @@
                 <td><%= dose.description %></td>
                 <td>
                   <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-                    <i class="fa fa-trash destroy_dose"></i>
+                    <i class="fa-solid fa-check"></i>
                   <% end %>
                 </td>
               </tr>
