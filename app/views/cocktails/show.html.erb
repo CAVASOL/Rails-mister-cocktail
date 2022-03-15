@@ -15,11 +15,14 @@
     </div>
 
     <div class="detail">
+      <div class="new-ingredient">
+        <%= link_to "New Ingredient", new_cocktail_dose_path(@cocktail), cocktail: @cocktail, dose: @dose, class: "new-ingredient" %>
+      </div>
       <table class="table table-bordered">
         <thead>
           <th>Ingredient</th>
           <th>Description</th>
-          <th>Delete</th>
+          <th>Action</th>
         </thead>
         <tbody>
           <% if @cocktail.doses.empty? %>
@@ -34,8 +37,11 @@
                 <td><%= dose.ingredient.name %></td>
                 <td><%= dose.description %></td>
                 <td>
-                  <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-                    <i class="fa-solid fa-check"></i>
+                  <%= link_to edit_cocktail_dose_path(dose), method: :get, class: "tablecon-e" do %>
+                    <i class="fa-regular fa-pen-to-square"></i>
+                  <% end %>
+                  <%= link_to dose_path(dose), method: :delete, class: "tablecon-d", data: { confirm: "Are you sure?" } do %>
+                    <i class="fa-regular fa-trash-can"></i>
                   <% end %>
                 </td>
               </tr>
@@ -43,13 +49,10 @@
           <% end %>
         </tbody>
       </table>
-      <div class="col-sm-12 col-md-6">
-        <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
-      </div>
     </div>
 
     <div class="detail">
-      <p><i class="fa-solid fa-book-open mr-5"></i> Reviews </p>
+      <p><i class="fa-solid fa-bookmark"></i> Reviews </p>
       <% if @cocktail.reviews.empty? %>
         <p>Be the first to let a review!</p>
       <% else %>
@@ -73,3 +76,5 @@
 
   </div>
 </div>
+
+<%= render 'shared/footer' %>
