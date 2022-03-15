@@ -2,10 +2,10 @@
   <p class=> <i class="fa-solid fa-angles-left"></i> <%= link_to "Back", :back, class: "back" %></p>
 </div>
 
-<div class="new-review">
+<div class="new-comment">
   <h3>New Review</h3>
 
-  <%= simple_form_for [cocktail(@cocktail[:id]), @review] do |f| %>
+  <%= simple_form_for [@cocktail, @review] do |f| %>
     <%= f.input :rating, collection: 0..5 %>
     <%= f.input :author %>
     <%= f.input :comment %>
