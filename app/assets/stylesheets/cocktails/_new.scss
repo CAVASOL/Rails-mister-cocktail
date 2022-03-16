@@ -1,17 +1,33 @@
-.new-cocktail {
-  color: white;
+.new-cocktail-title {
   text-align: center;
+}
+
+.new-cocktail {
+  color: #05192C;
   font-family: 'Roboto', sans-serif;
+  text-align: left;
+
+  & .new-cocktail-title {
+    text-align: center;
+  }
+}
+.new-cocktail-quote {
+  text-align: center;
+  border-bottom: 1px #05192C solid;
+}
+
+.new-cocktail-input {
+  margin: 10px;
 }
 
 .new-dose {
-  color: white;
+  color: #05192C;
   font-family: 'Roboto', sans-serif;
   padding: 20px;
 }
 
 .new-comment {
-  color: white;
+  color: #05192C;
   font-family: 'Roboto', sans-serif;
   padding: 20px;
 }

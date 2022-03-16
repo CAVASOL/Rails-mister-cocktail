@@ -3,33 +3,12 @@
 @import "explore";
 
 body {
-  background-color: #05192C;
-}
-
-.title {
-  text-align: center;
-  margin-top: 24px;
-}
-
-.title-top {
-  display: inline-flex;
-  color: #E8E4E2;
-  font-size: 36px;
-  margin: 0px;
-  font-weight:lighter;
-  font-family: 'Monoton', cursive;
-}
-
-.title-bottom {
-  color: #E8E4E2;
-  font-size: 40px;
-  margin: 0px;
-  font-weight: lighter;
-  font-family: 'Monoton', cursive;
+  // background-color: #05192C;
+  background-color: white;
 }
 
 .index-subtitle {
-  color: white;
+  color: #05192C;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   margin: 0;
