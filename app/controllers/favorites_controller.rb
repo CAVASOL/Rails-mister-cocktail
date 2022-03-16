@@ -3,9 +3,9 @@
 # app/controllers/favorites_controller.rb
 class FavoritesController < ApplicationController
   def create
-    @cockatil = Cocktail.find(params[:cockatil_id])
+    @cocktail = Cocktail.find(params[:cocktail_id])
 
-    current_user.favorite(@cockatil)
+    current_user.favorite(@cocktail)
     redirect_to request.referer
   end
 

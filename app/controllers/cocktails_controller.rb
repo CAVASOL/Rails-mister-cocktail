@@ -2,7 +2,7 @@
 
 # app/controllers/cocktails_controller.rb
 class CocktailsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: %i[index explore show]
+  skip_before_action :authenticate_user!, only: %i[index explore show]
 
   def index
     @cocktails = Cocktail.all

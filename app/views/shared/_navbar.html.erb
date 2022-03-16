@@ -61,4 +61,37 @@
     </div>
   <% end %>
 
+  <% if user_signed_in? %>
+    <% if controller_name == "registrations" && action_name == "edit" %>
+      <div class="icon">
+        <%= link_to edit_user_registration_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
+          <i class="far fa-user-circle" style="color: #CE326A"></i>
+          <p class="text" style="color: #CE326A">Profile</p>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="icon">
+        <%= link_to profile_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+          <i class="far fa-user-circle"></i>
+          <p class="text">Profile</p>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <% if controller_name == "sessions" && action_name == "new" %>
+      <div class="icon">
+        <%= link_to new_user_session_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
+          <i class="far fa-user-circle" style="color: #CE326A"></i>
+          <p class="text" style="color: #CE326A">Log in</p>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="icon">
+        <%= link_to new_user_session_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
+          <i class="far fa-user-circle"></i>
+          <p class="text">Log in</p>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
