@@ -1,6 +1,6 @@
 .container {
   padding: 16px 20px;
-  color: white;
+  color: #05192C;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,8 @@
 
 .cocktail-img {
   text-align: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .detail {
@@ -20,7 +22,7 @@
 }
 
 .table  {
-  border: 1px dotted white;
+  border: 1px dotted #05192C;
   width: 320px;
   text-align: center;
   // border-style: dotted;
@@ -43,7 +45,22 @@
   text-decoration: none;
 }
 
-.reviews {
-  margin: 0;
-  text-align: left;
+.review {
+  display: flex;
+
+  & .badge {
+    color: orange;
+    margin-right: 8px;
+  }
+}
+
+.review-content {
+  display: flex;
+  justify-content: space-between;
+
+  & .review-delete {
+    margin-left: 8px;
+    color: orange;
+    text-decoration: none;
+  }
 }

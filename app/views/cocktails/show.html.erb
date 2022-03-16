@@ -6,11 +6,11 @@
   <div class="row">
     <p class="show-title"><%= @cocktail.name %></p>
     <div class="cocktail-img">
-      <%= cl_image_tag @cocktail.photo.key, height: 240, width: 320, crop: :fill %>
+      <%= cl_image_tag @cocktail.photo.key, height: 280, width: 320, crop: :fill %>
     </div>
 
     <div class="detail">
-      <p><i class="fa-solid fa-book-open mr-5"></i> Instruction </p>
+      <p><i class="fa-solid fa-book-open"></i> Instruction </p>
       <p><%= @cocktail.instruction %></p>
 
       <div class="new-ingredient">
@@ -58,8 +58,8 @@
         <p>Be the first to let a review!</p>
       <% else %>
         <div class="reviews">
-          <div class="row">
-            <% @cocktail.reviews.each do |review| %>
+          <% @cocktail.reviews.each do |review| %>
+            <div class="review">
               <span class="badge badge-primary badge-pill">
                 <% counter = 0 %>
                 <% 5.times do %>
@@ -67,12 +67,16 @@
                   <% counter += 1 %>
                 <% end %>
               </span>
-              <%= review.author %> - <%= review.comment %>
-              <%= link_to review_path(review), method: :delete, class: "tablecon-d", data: { confirm: "Are you sure?" } do %>
-                <i class="fa-regular fa-trash-can"></i>
-              <% end %>
-            <% end %>
-          </div>
+              <div class="review-content">
+                <div><%= review.author %> - <%= review.comment %></div>
+                <div>
+                  <%= link_to review_path(review), method: :delete, class: "review-delete", data: { confirm: "Are you sure?" } do %>
+                    <i class="fa-regular fa-trash-can"></i>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>

@@ -5,12 +5,12 @@ const searchScroll = () => {
     // console.log(window.scrollY)
     // console.log(banner.offsetHeight)
     if (searchContainer && banner) {
-      if ((window.scrollY + 160) > banner.offsetHeight) {
+      if ((window.scrollY + 16) > banner.offsetHeight) {
         searchContainer.style.top = 0;
         searchContainer.classList.add("search-container-back")
       } else {
         if (window.scrollY === 0) {
-          searchContainer.style.top = "160px";
+          searchContainer.style.top = "16px";
         }
         searchContainer.classList.remove("search-container-back")
       }

@@ -1,12 +1,13 @@
 <div class="banner vh-100" style="background-image:">
-  <div class="title">
-    <h2 class="title-top" style="margin-right: 8px;">All</h2> <h2 class="title-top">that</h2>
-    <h2 class="title-bottom"> Cocktail </h2>
-  </div>
-
   <form class="search-container" action="/cocktails">
     <input id="searchBar" class="searchbar" name="query" type="text" placeholder="Search Cocktail!" aria-label="Search">
   </form>
+
+  <div class="title">
+    <h2 class="title-all">All</h2>
+    <h2 class="title-that">that</h2>
+    <h2 class="title-cocktail">Cocktail</h2>
+  </div>
 </div>
 
 <div class="row">
@@ -17,7 +18,7 @@
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail), class: "text-dark text-decoration-none" do %>
         <div class="sample-card" data-aos="zoon-in" style="background-image: url('<%= cl_image_path cocktail.photo.key, crop: :fill %>')">
-          <p> <%= cocktail.name %> </p>
+          <p class="name"><%= cocktail.name %></p>
         </div>
       <% end%>
     <% end %>

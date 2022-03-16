@@ -1,15 +1,19 @@
 <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-6 offset-lg-3">
-        <div class="bg-white rounded p-3 shadow">
-          <h3 class="new-cocktail">Create a new cocktail!</h3>
-            <%= simple_form_for @cocktail do |c| %>
-              <%= c.input :name %>
-              <%= c.input :instruction %>
-              <%= c.input :photo, as: :file %>
-              <%= c.submit class: 'btn btn-secondary' %>
-            <% end %>
-        </div>
+  <div class="new-cocktail">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="new-cocktail-quote">
+        <p>There cannot be good living</p>
+        <p>where there is no good drinking</p>
+        <p>– Benjamin Franklin</p>
+      </div>
+      <div class="new-cocktail-input">
+        <%= simple_form_for @cocktail do |c| %>
+          <%= c.input :name, class: "new-cocktail-input" %>
+          <%= c.input :instruction, class: "new-cocktail-input" %>
+          <%= c.input :photo, as: :file, class: "new-cocktail-input" %>
+          <%= c.submit class: 'btn btn-secondary' %>
+        <% end %>
       </div>
     </div>
+  </div>
 </div>

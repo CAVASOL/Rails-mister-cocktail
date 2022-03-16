@@ -4,6 +4,7 @@
   grid-gap: 20px;
   justify-content: center;
   padding: 16px;
+  text-decoration: none;
 }
 
 .sample-card {
@@ -16,55 +17,52 @@
   width: 160px;
   background-size: cover;
   border-radius: 4px;
+  text-decoration: none;
 
-  a, p {
-    text-decoration: none;
-    color:white;
+  & .name {
+    text-decoration: underline;
+    color: white;
     text-align: center;
-
-    &:hover {
-      opacity: 0.6;
-    }
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
   }
 }
 
 .cocktails {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   justify-content: center;
   align-items: center;
-  padding: 16px;
+  padding: 20px;
 }
 
 .cocktail-card {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 220px;
-  height: 180px;
+  width: 160px;
+  height: 140px;
   background-size: cover;
-  background-position: center;
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
   border-radius: 4px;
+  margin: 0;
+  padding: 0;
 
-
-  a, p {
-    text-decoration: none;
-    color:white;
-
-    &:hover {
-      opacity: 0.6;
-    }
+   & p {
+    text-decoration: underline;
+    color: white;
+    font-size: 16px;
+    text-align: center;
   }
 }
-
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .samples {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cocktails {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -74,11 +72,19 @@
   .samples {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .cocktails {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .samples {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .cocktails {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
@@ -88,11 +94,19 @@
   .samples {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
+
+  .cocktails {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .samples {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .cocktails {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
