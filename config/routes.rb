@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :reviews, only: :destroy
 
   get '/users/:id', to: 'users#show', as: 'users'
+  get 'profile', to: 'users#profile', as: 'profile'
   get 'explore', to: 'cocktails#explore', as: 'explore'
   get 'mypage', to: 'cocktails#mypage', as: 'mypage'
 end
