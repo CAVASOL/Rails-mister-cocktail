@@ -13,7 +13,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import "bootstrap";
 import { searchScroll } from "./search_scroll"
 
 document.addEventListener('turbolinks:load', () => {

@@ -44,23 +44,3 @@
   color: orange;
   text-decoration: none;
 }
-
-.review {
-  display: flex;
-
-  & .badge {
-    color: orange;
-    margin-right: 8px;
-  }
-}
-
-.review-content {
-  display: flex;
-  justify-content: space-between;
-
-  & .review-delete {
-    margin-left: 8px;
-    color: orange;
-    text-decoration: none;
-  }
-}
