@@ -45,9 +45,9 @@
     </div>
   <% end %>
 
-  <% if controller_name == "cocktails" && action_name == "mypage" && user_signed_in? %>
+  <% if controller_name == "users" && action_name == "show" && user_signed_in? %>
     <div class="icon">
-      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+      <%= link_to users_path(user), method: :get, class: "navbar-link text-dark text-decoration-none" do %>
         <i class="fa-solid fa-face-smile-wink" style="color: #B43B3B"></i>
         <p class="text" style="color: #B43B3B">My page</p>
       <% end %>
