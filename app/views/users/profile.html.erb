@@ -1,5 +1,10 @@
 <h1>lalalalalalalal</h1>
 
-  <%= link_to destroy_user_session_path, method: :delete, class: "exit-button-profile" do %>
-    <p>Log out  <i class = "fas fa-sign-out-alt"></i></p>
-  <% end %>
+<div class="logout-container">
+  <div class="logout-btn">
+    <%= link_to destroy_user_session_path, method: :delete, class: "text-dark text-decoration-none" do %>
+      <p>Log out</p>
+      <i class="fas fa-sign-out-alt"></i>
+    <% end %>
+  </div>
+</div>

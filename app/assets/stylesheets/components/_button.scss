@@ -15,3 +15,29 @@
   // padding-right: 10px;
   margin-bottom: 10px;
 }
+
+
+.logout-container {
+  display: flex;
+  justify-content: right;
+  padding: 20px;
+
+  & a {
+    text-decoration: none;
+  }
+}
+
+.logout-btn {
+  font-family: 'Roboto', sans-serif;
+
+  & i, p {
+  display: inline-flex;
+  justify-content: right;
+  text-decoration: none;
+  color: #05192C;
+  }
+
+  & p {
+    margin-right: 4px;
+  }
+}
