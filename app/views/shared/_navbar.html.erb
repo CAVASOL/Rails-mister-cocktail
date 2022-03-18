@@ -83,9 +83,18 @@
           <p class="text" style="color: #B43B3B">Profile</p>
         <% end %>
       </div>
-    <% else %>
+    <% elsif %>
+      <% if controller_name == "users" && action_name == "show" %>
+        <div class="icon">
+          <%= link_to users_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+            <i class="far fa-user-circle"></i>
+            <p class="text">Profile</p>
+          <% end %>
+        </div>
+      <% end %>
+    <% elsif %>
       <div class="icon">
-        <%= link_to profile_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+        <%= link_to root_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
           <i class="far fa-user-circle"></i>
           <p class="text">Profile</p>
         <% end %>
