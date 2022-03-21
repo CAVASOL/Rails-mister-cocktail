@@ -1,19 +1,22 @@
-<div class="container">
-  <div class="new-cocktail">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="new-cocktail-quote">
-        <p>There cannot be good living</p>
-        <p>where there is no good drinking</p>
-        <p>– Benjamin Franklin</p>
-      </div>
-      <div class="new-cocktail-input">
-        <%= simple_form_for @cocktail do |c| %>
-          <%= c.input :name, class: "new-cocktail-input" %>
-          <%= c.input :instruction, class: "new-cocktail-input" %>
-          <%= c.input :photo, as: :file, class: "new-cocktail-input" %>
-          <%= c.submit class: 'btn btn-secondary' %>
-        <% end %>
-      </div>
+<div class="new-container">
+  <div class="col-12 col-md-6 offset-lg-3">
+    <div class="new-cocktail-quote">
+      <p>There cannot be good living</p>
+      <p>where there is no good drinking</p>
+      <p>– Benjamin Franklin</p>
+    </div>
+    <div class="new-cocktail-input">
+      <%= simple_form_for @cocktail do |cocktail| %>
+        <%= cocktail.error_notification %>
+        <%= cocktail.input :name, input_html: { placeholder: "Cocktail name!", class: "new-cocktail-name" } %>
+        <%= cocktail.input :instruction, input_html: { placeholder: "cocktail's instruction", class: "new-cocktail-inst" } %>
+        <%= cocktail.input :photo, as: :file, input_html: { max: "1", class: "new-cocktail-photo" } %>
+        <div class="newc-btn">
+          <%= cocktail.submit class: 'new-cocktail-btn' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
+
+<%= render "shared/footer" %>
