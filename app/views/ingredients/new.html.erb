@@ -6,3 +6,9 @@
   <%= f.input :name, input_html: { placeholder: "New ingredient?", class: "ing-name" } %>
   <%= f.button :submit, class: "new-dose-btn" %>
 <% end %>
+
+<% @ingredients.each do |ingredient| %>
+  <ul><li><%= ingredient.name %></li></ul>
+<% end %>
+
+<%= render 'shared/footer' %>
