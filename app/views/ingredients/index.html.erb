@@ -1,0 +1,8 @@
+<div class="top-nav">
+  <p class=> <i class="fa-solid fa-angles-left"></i> <%= link_to "Back", :back, class: "back" %></p>
+</div>
+
+
+<% @ingredients.each do |ingredient| %>
+  <ul><li><%= ingredient.name %></li></ul>
+<% end %>

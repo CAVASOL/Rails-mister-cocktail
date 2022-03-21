@@ -3,16 +3,24 @@
 # app/controllers/ingredients_controller.rb
 class IngredientsController < ApplicationController
   def new
+    @ingredients = Ingredient.all
+    @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.new
+
+    if params[:query].present?
+      @query = params[:query]
+      @ingredients = Ingredient.where('name ILIKE ?', "%#{params[:query]}%")
+    else
+      @ingredients = Ingredient.all
+    end
   end
 
-  def show; end
-
   def create
+    @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.new(ingredient_params)
     # @ingredient.cocktail = @cocktail
     if @ingredient.save
-      redirect_to new_cocktail_ingredient_path(@cockatil.id)
+      redirect_to new_cocktail_dose_path(@cocktail)
     else
       render :new
     end
