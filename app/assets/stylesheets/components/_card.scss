@@ -17,10 +17,10 @@
   width: 160px;
   background-size: cover;
   border-radius: 4px;
-  text-decoration: none;
+  text-decoration: underline;
+  color: white;
 
   & .name {
-    text-decoration: none;
     color: white;
     text-align: center;
     font-family: 'Fira Sans', sans-serif;

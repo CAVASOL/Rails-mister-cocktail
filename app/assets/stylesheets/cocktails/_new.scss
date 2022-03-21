@@ -5,7 +5,35 @@
 .new-dose {
   color: #05192C;
   font-family: 'Roboto', sans-serif;
-  padding: 20px;
+  padding: 12px;
+}
+
+.new-dose-input {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .beautiful-dropdown {
+    display: block;
+    width: 300px;
+    height: 32px;
+    margin-bottom: 20px;
+    border: 1px dotted #05192C;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+
+ & .dose-desc {
+    display: block;
+    width: 280px;
+    height: 32px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px dotted #05192C;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
 }
 
 .new-comment {
@@ -15,9 +43,9 @@
 }
 
 
-
 .new-container {
   padding: 12px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .new-cocktail-quote {
@@ -39,6 +67,7 @@
   width: 300px;
   border-radius: 8px;
   border: 1px dotted #05192C;
+  margin-top: 8px;
 }
 
 .new-cocktail-inst {
@@ -48,10 +77,12 @@
   width: 300px;
   border-radius: 8px;
   border: 1px dotted #05192C;
+  margin-top: 8px;
 }
 
 .new-cocktail-photo {
   display: block;
   padding: 10px;
   margin-bottom: 20px;
+  margin-top: 8px;
 }
