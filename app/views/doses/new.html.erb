@@ -18,6 +18,9 @@
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
       <%= f.input :description, input_html: { placeholder: "Describe dose for cocktail!", class: "dose-desc" } %>
+      <div class="new-ingredient-btn">
+        <%= link_to "Do you need a new ingredient? Click here!", new_cocktail_ingredient_path(@cocktail.id), cocktail: @cocktail, ingredient: @ingredient, class: "newing" %>
+      </div>
       <div class="dose-btn">
         <%= f.button :submit, class: "new-dose-btn" %>
       </div>
