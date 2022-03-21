@@ -45,9 +45,16 @@
     </div>
   <% end %>
 
-  <% if controller_name == "users" && action_name == "show" && user_signed_in? %>
+  <% if controller_name == "cocktails" && action_name == "mypage" %>
     <div class="icon">
-      <%= link_to users_path(user), method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+        <i class="fa-solid fa-face-smile-wink" style="color: #B43B3B"></i>
+        <p class="text" style="color: #B43B3B"> My page </p>
+      <% end %>
+    </div>
+  <% elsif controller_name == "cocktails" && action_name == "show" && user_signed_in? %>
+    <div class="icon">
+      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
         <i class="fa-solid fa-face-smile-wink" style="color: #B43B3B"></i>
         <p class="text" style="color: #B43B3B">My page</p>
       <% end %>
@@ -64,23 +71,16 @@
   <% if user_signed_in? %>
     <% if controller_name == "users" && action_name == "profile" %>
       <div class="icon">
-        <%= link_to profile_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+        <%= link_to profile_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
           <i class="far fa-user-circle" style="color: #B43B3B"></i>
-          <p class="text" style="color: #B43B3B">Profile</p>
+          <p class="text" style="color: #B43B3B">Profile 1</p>
         <% end %>
       </div>
-    <% elsif controller_name == "registrations" && action_name == "edit" %>
-      <div class="icon">
-        <%= link_to edit_user_registration_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
-          <i class="far fa-user-circle" style="color: #B43B3B"></i>
-          <p class="text" style="color: #B43B3B">Profile</p>
-        <% end %>
-      </div>
-    <% elsif %>
+    <% else %>
       <div class="icon">
         <%= link_to profile_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
           <i class="far fa-user-circle"></i>
-          <p class="text">Profile</p>
+          <p class="text">Profile 3</p>
         <% end %>
       </div>
     <% end %>
