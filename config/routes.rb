@@ -7,12 +7,14 @@ Rails.application.routes.draw do
     resources :ingredients, only: %i[create]
     resources :doses, only: %i[new create edit update]
     resources :reviews, only: %i[new create edit update]
+    resources :ingredients, only: %i[new create]
     resources :favorites, only: [:create]
     delete 'favorites', to: 'favorites#destroy'
   end
 
   resources :cocktails, only: :destroy
   resources :doses, only: :destroy
+  resources :ingredient, only: :destroy
   resources :reviews, only: :destroy
 
   get '/users/:id', to: 'users#show', as: 'users'

@@ -35,14 +35,36 @@
     margin-top: 8px;
   }
 
+  & .ing-name {
+    display: block;
+    width: 294px;
+    height: 32px;
+    margin-bottom: 20px;
+    border: 1px dotted #05192C;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+
  & .dose-desc {
     display: block;
     width: 280px;
     height: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     padding: 10px;
     border: 1px dotted #05192C;
     border-radius: 8px;
     margin-top: 8px;
+  }
+}
+
+.new-ingredient-btn {
+  text-align: left;
+  font-size: 12px;
+  margin: 0;
+  margin-bottom: 20px;
+
+  & a {
+    text-decoration: none;
+    color: #05192C;
   }
 }

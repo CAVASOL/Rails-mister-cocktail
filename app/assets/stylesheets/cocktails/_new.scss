@@ -9,7 +9,10 @@
 
 .new-cocktail-quote {
   text-align: center;
-  border-bottom: 1px #05192C solid;
+
+  h3 {
+    font-size: 16px;
+  }
 }
 
 .new-cocktail-input {
