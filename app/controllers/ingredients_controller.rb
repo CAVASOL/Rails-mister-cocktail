@@ -3,18 +3,18 @@
 # app/controllers/ingredients_controller.rb
 class IngredientsController < ApplicationController
   def new
-    @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.new
   end
 
+  def show; end
+
   def create
     @ingredient = Ingredient.new(ingredient_params)
-    @ingredient.cocktail = @cocktail
+    # @ingredient.cocktail = @cocktail
     if @ingredient.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to new_cocktail_ingredient_path(@cockatil.id)
     else
-      @dose = Dose.new
-      render 'cocktails/show'
+      render :new
     end
   end
 
