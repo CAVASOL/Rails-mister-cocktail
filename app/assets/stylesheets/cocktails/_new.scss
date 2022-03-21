@@ -2,24 +2,6 @@
   text-align: center;
 }
 
-.new-cocktail {
-  color: #05192C;
-  font-family: 'Roboto', sans-serif;
-  text-align: left;
-
-  & .new-cocktail-title {
-    text-align: center;
-  }
-}
-.new-cocktail-quote {
-  text-align: center;
-  border-bottom: 1px #05192C solid;
-}
-
-.new-cocktail-input {
-  margin: 10px;
-}
-
 .new-dose {
   color: #05192C;
   font-family: 'Roboto', sans-serif;
@@ -30,4 +12,46 @@
   color: #05192C;
   font-family: 'Roboto', sans-serif;
   padding: 20px;
+}
+
+
+
+.new-container {
+  padding: 12px;
+}
+
+.new-cocktail-quote {
+  text-align: center;
+  border-bottom: 1px #05192C solid;
+}
+
+.new-cocktail-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.new-cocktail-name {
+  display: block;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 300px;
+  border-radius: 8px;
+  border: 1px dotted #05192C;
+}
+
+.new-cocktail-inst {
+  display: block;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 300px;
+  border-radius: 8px;
+  border: 1px dotted #05192C;
+}
+
+.new-cocktail-photo {
+  display: block;
+  padding: 10px;
+  margin-bottom: 20px;
 }

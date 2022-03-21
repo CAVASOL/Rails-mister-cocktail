@@ -16,7 +16,6 @@
   margin-bottom: 10px;
 }
 
-
 .logout-container {
   display: flex;
   justify-content: right;
@@ -39,5 +38,18 @@
 
   & p {
     margin-right: 4px;
+  }
+}
+
+.newc-btn {
+  text-align: center;
+
+  .new-cocktail-btn {
+    height: 32px;
+    width: 120px;
+    background-color: #05192C;
+    color: white;
+    border: none;
+    border-radius: 8px;
   }
 }

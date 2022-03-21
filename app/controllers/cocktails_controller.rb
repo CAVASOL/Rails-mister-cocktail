@@ -43,7 +43,6 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    # @cocktails = Cocktail.all
     @cocktail = Cocktail.new(cocktail_params)
     @cockatil.user = current_user
     if @cocktail.save
