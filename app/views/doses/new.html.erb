@@ -3,11 +3,19 @@
 </div>
 
 <div class="new-dose">
-  <h3>New ingredient</h3>
-
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
-    <%= f.input :description %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
+  <div class="about-dose">
+    <p>One of the reasons we learn mixology is to delight friends and family
+    with delicious cocktails and mixed drinks when they visit our home.
+    Naturally, this means staying stocked up on essential cocktail ingredients.
+    </p>
+  </div>
+  <div class="new-dose-input">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+      <%= f.input :description, input_html: { placeholder: "Describe dose for cocktail!", class: "dose-desc" } %>
+      <div class="dose-btn">
+        <%= f.button :submit, class: "new-dose-btn" %>
+      </div>
+    <% end %>
+  </div>
 </div>
