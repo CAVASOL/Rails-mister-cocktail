@@ -3,10 +3,10 @@
 # app/controllers/ingredients_controller.rb
 class IngredientsController < ApplicationController
   def new
-    @ingredients = Ingredient.all
     @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.new
 
+    @ingredients = Ingredient.all
     if params[:query].present?
       @query = params[:query]
       @ingredients = Ingredient.where('name ILIKE ?', "%#{params[:query]}%")

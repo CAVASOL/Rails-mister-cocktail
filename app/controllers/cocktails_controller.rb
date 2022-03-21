@@ -34,7 +34,6 @@ class CocktailsController < ApplicationController
 
   def explore
     @cocktails = Cocktail.all
-    @ingredients = Ingredient.all
 
     if params[:query].present?
       @query = params[:query]

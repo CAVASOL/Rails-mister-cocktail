@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :cocktails, only: :destroy
   resources :doses, only: :destroy
-  resources :ingredient, only: :destroy
+  resources :ingredients, only: :destroy
   resources :reviews, only: :destroy
 
   get '/users/:id', to: 'users#show', as: 'users'
