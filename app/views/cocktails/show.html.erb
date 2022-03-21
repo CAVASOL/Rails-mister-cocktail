@@ -14,7 +14,7 @@
       <p><%= @cocktail.instruction %></p>
 
       <div class="new-ingredient">
-        <%= link_to "New Ingredient", new_cocktail_dose_path(@cocktail), cocktail: @cocktail, dose: @dose, class: "new-ingredient" %>
+        <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), cocktail: @cocktail, dose: @dose, class: "new-ingredient" %>
       </div>
       <table class="table table-bordered">
         <thead>
@@ -52,7 +52,7 @@
     <div class="detail mt-5">
       <p><i class="fa-solid fa-bookmark m-0"></i> Reviews </p>
       <div class="new-review">
-        <%= link_to "Review", new_cocktail_review_path(@cocktail.id), cocktail: @cocktail, review: @review, class: "new-review" %>
+        <%= link_to "Add your review", new_cocktail_review_path(@cocktail.id), cocktail: @cocktail, review: @review, class: "newreview" %>
       </div>
       <% if @cocktail.reviews.empty? %>
         <p>Be the first to let a review!</p>

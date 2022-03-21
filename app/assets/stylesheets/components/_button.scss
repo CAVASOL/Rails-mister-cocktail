@@ -1,5 +1,5 @@
 .new-ingredient {
-  color: wheat;
+  color: cadetblue;
   font-size: 12px;
   text-align: right;
   text-decoration: none;
@@ -8,12 +8,14 @@
 }
 
 .new-review {
-  color: wheat;
-  font-size: 12px;
   text-align: right;
-  text-decoration: none;
-  // padding-right: 10px;
   margin-bottom: 10px;
+
+  .newreview {
+    color: cadetblue;
+    text-decoration: none;
+    font-size: 12px;
+  }
 }
 
 .logout-container {
