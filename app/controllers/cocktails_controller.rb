@@ -15,6 +15,23 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def new
+    @ingredients = Ingredient.all
+
+    @cocktail = Cocktail.new
+    @dose = Dose.new
+  end
+
+  def create
+    @cocktail = Cocktail.new(cocktail_params)
+    @cockatil.user = current_user
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :new
+    end
+  end
+
   def explore
     @cocktails = Cocktail.all
     @ingredients = Ingredient.all
@@ -33,23 +50,6 @@ class CocktailsController < ApplicationController
     @review = Review.new
 
     @reviews = Review.all
-  end
-
-  def new
-    @ingredients = Ingredient.all
-
-    @cocktail = Cocktail.new
-    @dose = Dose.new
-  end
-
-  def create
-    @cocktail = Cocktail.new(cocktail_params)
-    @cockatil.user = current_user
-    if @cocktail.save
-      redirect_to cocktail_path(@cocktail)
-    else
-      render :new
-    end
   end
 
   def edit
