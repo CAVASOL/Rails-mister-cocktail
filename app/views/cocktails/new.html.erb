@@ -10,7 +10,7 @@
         <%= cocktail.input :instruction, input_html: { placeholder: "Describe your cocktail's instruction!", class: "new-cocktail-inst" } %>
         <%= cocktail.input :photo, as: :file, input_html: { max: "1", class: "new-cocktail-photo", id: "new-cocktail-p" } %>
         <div class="newc-btn">
-          <%= cocktail.submit class: 'new-cocktail-btn' %>
+          <%= cocktail.button :submit, "Done", class: "new-cocktail-btn", data: { confirm: "Nice to mix you all!" } %>
         </div>
       <% end %>
     </div>
