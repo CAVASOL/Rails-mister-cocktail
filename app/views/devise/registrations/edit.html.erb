@@ -4,10 +4,8 @@
 
 <div class="edit-user-container">
   <h2>Edit <%= current_user.name.capitalize %>'s profile</h2>
-
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
-
     <div class="edit-form-inputs">
       <%= f.input :email,
                   required: true,
@@ -35,12 +33,10 @@
                                 placeholder: "Current password to confirm your changes",
                                 class: "edit-user-input" } %>
     </div>
-
     <div class="edit-form-actions">
       <%= f.button :submit, "Update", class: "edit-user-btn" %>
     </div>
   <% end %>
-
   <div class="delete-user">
     <%= link_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "deleteuser-btn" %>
   </div>
