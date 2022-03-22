@@ -62,16 +62,23 @@
   <% end %>
 
   <% if user_signed_in? %>
-    <% if controller_name == "users" && action_name == "show" %>
+    <% if controller_name == "users" && action_name == "profile" %>
       <div class="icon">
-        <%= link_to users_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
+        <%= link_to profile_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
           <i class="far fa-user-circle" style="color: #B43B3B"></i>
           <p class="text" style="color: #B43B3B">Profile</p>
         <% end %>
       </div>
-    <% else %>
+    <% elsif controller_name == "registrations" && action_name == "edit" %>
       <div class="icon">
-        <%= link_to root_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+        <%= link_to edit_user_registration_path, method: :get , class: "navbar-link text-dark text-decoration-none" do %>
+          <i class="far fa-user-circle" style="color: #CE326A"></i>
+          <p class="text" style="color: #CE326A">Profile</p>
+        <% end %>
+      </div>
+    <% elsif %>
+      <div class="icon">
+        <%= link_to profile_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
           <i class="far fa-user-circle"></i>
           <p class="text">Profile</p>
         <% end %>

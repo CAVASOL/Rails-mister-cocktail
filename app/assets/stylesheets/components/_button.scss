@@ -18,29 +18,44 @@
   }
 }
 
-.logout-container {
-  display: flex;
-  justify-content: right;
+.session-container {
   padding: 20px;
+  display: inline-block;
 
-  & a {
+  a {
     text-decoration: none;
   }
 }
 
 .logout-btn {
   font-family: 'Roboto', sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 28px;
+  padding: 8px;
+  background-color: #05192C;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
 
-  & i, p {
-  display: inline-flex;
-  justify-content: right;
-  text-decoration: none;
-  color: #05192C;
-  }
-
-  & p {
-    margin-right: 4px;
-  }
+.password-btn {
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 28px;
+  padding: 8px;
+  background-color: #05192C;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 14px;
 }
 
 .newc-btn {
@@ -92,5 +107,39 @@
     color: white;
     border: none;
     border-radius: 8px;
+  }
+}
+
+.edit-form-actions {
+  text-align: center;
+
+  .edit-user-btn {
+    height: 32px;
+    width: 160px;
+    background-color: #05192C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+}
+
+.delete-user {
+  text-align: center;
+
+  .deleteuser-btn {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    width: 160px;
+    height: 32px;
+    background-color: #05192C;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
   }
 }

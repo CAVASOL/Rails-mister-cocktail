@@ -1,10 +1,10 @@
-<h1>lalalalalalalal</h1>
 
-<div class="logout-container">
-  <div class="logout-btn">
-    <%= link_to destroy_user_session_path, method: :delete, class: "text-dark text-decoration-none" do %>
-      <p>Log out</p>
-      <i class="fas fa-sign-out-alt"></i>
-    <% end %>
+<div class="profile-comment">
+  <h3>Hello, <%= current_user.name.capitalize %>!</h3>
+  <h3>How can help you?</h3>
+
+  <div class="session-container">
+    <%= link_to "Edit profile", edit_user_registration_path, method: :get, class: "password-btn" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "logout-btn" %>
   </div>
 </div>
