@@ -13,7 +13,7 @@
     <%= simple_form_for [@cocktail, @ingredient] do |f| %>
       <%= f.input :name, input_html: { placeholder: "New ingredient?", class: "ing-name" } %>
       <div class="ing-btn">
-        <%= f.button :submit, class: "new-ing-btn" %>
+        <%= f.button :submit, "Done", class: "new-ing-btn" %>
       </div>
     <% end %>
   </div>

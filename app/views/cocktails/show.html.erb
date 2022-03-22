@@ -8,7 +8,11 @@
     <div class="cocktail-img">
       <%= cl_image_tag @cocktail.photo.key, height: 280, width: 320, crop: :fill %>
     </div>
-
+    <div class="cocktail-show-delete-edit">
+      <%= link_to "Delete", @cocktail_path, method: :delete, class: "cocktail-delete", data: { confirm: "Are you sure?" } %>
+      <p>|</p>
+      <%= link_to "Edit", @edit_cocktail_path, method: :get, class: "cocktail-edit" %>
+    </div>
     <div class="detail">
       <p><i class="fa-solid fa-book-open"></i> Instruction </p>
       <p><%= @cocktail.instruction %></p>
@@ -80,9 +84,10 @@
         </div>
       <% end %>
     </div>
-
-    <%= link_to "Delete", @cocktail_path, method: :delete, class: "cocktail-delete", data: { confirm: "Are you sure?" } %>
-
+    <div class="cocktail-show-actions">
+      <%# <%= link_to "Save", "#", class: "cocktail-save" %>
+      <%= link_to "Share", "#", class: "cocktail-share" %>
+    </div>
   </div>
 </div>
 

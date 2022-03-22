@@ -22,7 +22,7 @@
         <%= link_to "Do you need a new ingredient? Click here!", new_cocktail_ingredient_path(@cocktail.id), cocktail: @cocktail, ingredient: @ingredient, class: "newing" %>
       </div>
       <div class="dose-btn">
-        <%= f.button :submit, class: "new-dose-btn" %>
+        <%= f.button :submit, "Done", class: "new-dose-btn" %>
       </div>
     <% end %>
   </div>
