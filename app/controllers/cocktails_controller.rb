@@ -24,6 +24,7 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
+    # @cocktail.user = current_user
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
@@ -63,7 +64,6 @@ class CocktailsController < ApplicationController
 
   def destroy
     @cocktail = Cocktail.find(params[:id])
-    @cockatil.user = current_user
     @cocktail.destroy
     redirect_to cocktails_path
   end
