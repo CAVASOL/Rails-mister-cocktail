@@ -8,24 +8,33 @@
   </form>
 </div> %>
 
-<div class="new-ingredient-input">
-  <%= simple_form_for [@cocktail, @ingredient] do |f| %>
-    <%= f.input :name, input_html: { placeholder: "New ingredient?", class: "ing-name" } %>
-    <div class="ing-btn">
-      <%= f.button :submit, class: "new-ing-btn" %>
-    </div>
-  <% end %>
-</div>
+<div class="ing-container">
+  <div class="new-ingredient-input">
+    <%= simple_form_for [@cocktail, @ingredient] do |f| %>
+      <%= f.input :name, input_html: { placeholder: "New ingredient?", class: "ing-name" } %>
+      <div class="ing-btn">
+        <%= f.button :submit, class: "new-ing-btn" %>
+      </div>
+    <% end %>
+  </div>
 
   <div class="ing-multi">
     <div class="form-group">
     <label for="exampleFormControlSelect2">Ingredients</label>
       <select multiple class="ing-form-control" id="exampleFormControlSelect2">
         <% @ingredients.each do |ingredient| %>
-          <option> <%= ingredient.name %> </option>
+          <div class="ing-content">
+            <option>
+              <%= link_to ingredient_path(ingredient), method: :delete, class: "ingredient-delete", data: { confirm: "Are you sure?" } do %>
+                <p><%= ingredient.name %><i class="fa-regular fa-trash-can"></i></p>
+              <% end %>
+            </option>
+          </div>
         <% end %>
       </select>
     </div>
   </div>
+</div>
+
 
 <%= render 'shared/footer' %>

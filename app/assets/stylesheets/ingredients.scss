@@ -2,11 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.ing-container {
+  color: #05192C;
+  font-family: 'Roboto', sans-serif;
+  padding: 12px;
+}
+
 .new-ingredient-input {
   padding: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 16px;
 
   .ing-name {
     display: block;
@@ -34,5 +41,16 @@
     border-radius: 8px;
     margin-top: 8px;
     padding: 10px;
+  }
+}
+
+.ing-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #05192C;
+
+  .ingredient-delete {
+    color: #05192C;
   }
 }

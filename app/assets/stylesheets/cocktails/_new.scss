@@ -16,7 +16,7 @@
 }
 
 .new-cocktail-input {
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
   padding: 12px;
@@ -47,4 +47,37 @@
   padding: 10px;
   margin-bottom: 20px;
   margin-top: 8px;
+}
+
+// .newc-photo {
+//   margin-bottom: 20px;
+
+//   label {
+//     width: 120px;
+//     height: 32px;
+//     padding: 8px;
+//     background-color: cadetblue;
+//     color: white;
+//     font-size: 12px;
+//     border-radius: 8px;
+//   }
+// }
+
+input[type=file]::file-selector-button {
+  width: 120px;
+  height: 32px;
+  padding: 8px;
+  background-color: cadetblue;
+  color: white;
+  font-size: 12px;
+  border-radius: 8px;
+  border: none;
+  transition: 1s;
+  margin-bottom: 20px;
+  margin-right: 8px;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #81ecec;
+  // border: 2px solid #00cec9;
 }
