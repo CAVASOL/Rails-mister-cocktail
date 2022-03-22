@@ -8,12 +8,9 @@
         <%= cocktail.error_notification %>
         <%= cocktail.input :name, input_html: { class: "new-cocktail-name" } %>
         <%= cocktail.input :instruction, input_html: { placeholder: "Describe your cocktail's instruction!", class: "new-cocktail-inst" } %>
-        <form>
-          <label for="fileUpload">Upload Photo</label>
-          <input type="file" id="fileUpload">
-        </form>
+        <%= cocktail.input :photo, as: :file, input_html: { max: "1", class: "new-cocktail-photo", id: "new-cocktail-p" } %>
         <div class="newc-btn">
-          <%= cocktail.button :submit, "Done", data: { confirm: "Nice to mix you!" }, class: 'new-cocktail-btn' %>
+          <%= cocktail.submit class: 'new-cocktail-btn' %>
         </div>
       <% end %>
     </div>
