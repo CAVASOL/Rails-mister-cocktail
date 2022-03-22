@@ -27,6 +27,47 @@
   }
 }
 
+.logout-btn {
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 28px;
+  padding: 8px;
+  background-color: #05192C;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  transition: 1s;
+
+  .logout-btn:hover {
+    background-color: #81ecec;
+  }
+}
+
+.password-btn {
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 28px;
+  padding: 8px;
+  background-color: #05192C;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  transition: 1s;
+
+    .password-btn:hover {
+    background-color: #81ecec;
+  }
+}
+
 .login-form-actions {
   text-align: center;
 
@@ -91,37 +132,6 @@
     border-radius: 8px;
     font-size: 14px;
   }
-}
-
-.logout-btn {
-  font-family: 'Roboto', sans-serif;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 200px;
-  height: 28px;
-  padding: 8px;
-  background-color: #05192C;
-  color: white;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 14px;
-}
-
-.password-btn {
-  font-family: 'Roboto', sans-serif;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 200px;
-  height: 28px;
-  padding: 8px;
-  background-color: #05192C;
-  color: white;
-  border-radius: 8px;
-  text-align: center;
-  margin-bottom: 8px;
-  font-size: 14px;
 }
 
 .newc-btn {
