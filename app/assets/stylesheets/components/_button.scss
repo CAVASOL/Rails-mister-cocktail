@@ -27,6 +27,72 @@
   }
 }
 
+.login-form-actions {
+  text-align: center;
+
+  .login-btn {
+    height: 32px;
+    width: 120px;
+    background-color: #05192C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}
+
+.signup-form-actions {
+  text-align: center;
+
+  .signup-form-btn {
+    height: 32px;
+    width: 120px;
+    background-color: #05192C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}
+
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+
+  .signup-btn {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 32px;
+    // padding: 8px;
+    background-color: #05192C;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+  }
+}
+
+.dumdum-form-actions {
+  text-align: center;
+
+  .dumdum-form-btn {
+    height: 32px;
+    width: 120px;
+    background-color: #05192C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}
+
 .logout-btn {
   font-family: 'Roboto', sans-serif;
   align-items: center;
