@@ -10,8 +10,25 @@
 
   .ing-name {
     display: block;
-    width: 294px;
+    width: 280px;
     height: 32px;
+    margin-bottom: 20px;
+    border: 1px dotted #05192C;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 10px;
+  }
+}
+
+.ing-multi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .ing-form-control {
+    display: block;
+    width: 300px;
+    height: 240px;
     margin-bottom: 20px;
     border: 1px dotted #05192C;
     border-radius: 8px;

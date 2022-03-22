@@ -17,8 +17,15 @@
   <% end %>
 </div>
 
-<% @ingredients.each do |ingredient| %>
-  <ul><li><%= ingredient.name %></li></ul>
-<% end %>
+  <div class="ing-multi">
+    <div class="form-group">
+    <label for="exampleFormControlSelect2">Ingredients</label>
+      <select multiple class="ing-form-control" id="exampleFormControlSelect2">
+        <% @ingredients.each do |ingredient| %>
+          <option> <%= ingredient.name %> </option>
+        <% end %>
+      </select>
+    </div>
+  </div>
 
 <%= render 'shared/footer' %>
