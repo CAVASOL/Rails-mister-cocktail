@@ -7,7 +7,7 @@
     <h3>How's your cocktail?</h3>
   </div>
   <div class="new-review-input">
-    <%= simple_form_for [@cocktail(:id), @review] do |f| %>
+    <%= simple_form_for [@cocktail, @review] do |f| %>
       <%= f.input :rating, collection: 0..5, input_html: { class: "review-rate" } %>
       <%= f.input :author, input_html: { class: "review-name" } %>
       <%= f.input :comment, input_html: { class: "review-comment" } %>
