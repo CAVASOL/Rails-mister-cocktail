@@ -219,3 +219,40 @@
     text-decoration: none;
   }
 }
+
+.cocktail-show-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .cocktail-save {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    width: 80px;
+    height: 32px;
+    background-color: cadetblue;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 8px;
+  }
+
+  .cocktail-share {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    width: 80px;
+    height: 32px;
+    background-color: orange;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+  }
+}

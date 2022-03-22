@@ -9,12 +9,36 @@
 .show-title {
   text-align: center;
   font-size: 24px;
+  margin-bottom: 32px;
 }
 
 .cocktail-img {
   text-align: center;
   background-size: cover;
   background-position: center;
+  margin: 0;
+}
+
+.cocktail-show-delete-edit {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin: 4px 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+
+  a {
+    text-decoration: none;
+    color: #05192C;
+  }
+
+  .cocktail-delete {
+    margin-right: 8px;
+  }
+
+  p {
+    margin-right: 8px;
+  }
 }
 
 .detail {
