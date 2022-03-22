@@ -1,3 +1,21 @@
 // Place all the styles related to the ingredients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.new-ingredient-input {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .ing-name {
+    display: block;
+    width: 294px;
+    height: 32px;
+    margin-bottom: 20px;
+    border: 1px dotted #05192C;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 10px;
+  }
+}

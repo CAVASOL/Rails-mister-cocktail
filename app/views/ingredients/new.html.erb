@@ -2,16 +2,20 @@
   <p class=> <i class="fa-solid fa-angles-left"></i> <%= link_to "Back", :back, class: "back" %></p>
 </div>
 
-<div class="ingredient-search mt-5">
+<%# <div class="ingredient-search mt-5">
   <form class="index-form-inline" action="/cocktails/:cocktail_id/ingredients/new">
     <input class="ing-search" type="search" name="query" placeholder="Search ingredient?" aria-label="Search">
   </form>
-</div>
+</div> %>
 
-<%= simple_form_for [@cocktail, @ingredient] do |f| %>
-  <%= f.input :name, input_html: { placeholder: "New ingredient?", class: "ing-name" } %>
-  <%= f.button :submit, class: "new-dose-btn" %>
-<% end %>
+<div class="new-ingredient-input">
+  <%= simple_form_for [@cocktail, @ingredient] do |f| %>
+    <%= f.input :name, input_html: { placeholder: "New ingredient?", class: "ing-name" } %>
+    <div class="ing-btn">
+      <%= f.button :submit, class: "new-ing-btn" %>
+    </div>
+  <% end %>
+</div>
 
 <% @ingredients.each do |ingredient| %>
   <ul><li><%= ingredient.name %></li></ul>
