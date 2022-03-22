@@ -81,6 +81,8 @@
       <% end %>
     </div>
 
+    <%= link_to "Delete", @cocktail_path, method: :delete, class: "cocktail-delete", data: { confirm: "Are you sure?" } %>
+
   </div>
 </div>
 

@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     delete 'favorites', to: 'favorites#destroy'
   end
 
-  resources :cocktails, only: :destroy
   resources :doses, only: :destroy
   resources :ingredients, only: :destroy
   resources :reviews, only: :destroy
