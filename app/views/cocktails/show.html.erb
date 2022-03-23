@@ -58,7 +58,7 @@
     <div class="detail mt-5">
       <p><i class="fa-solid fa-bookmark m-0"></i> Reviews </p>
       <div class="new-review">
-        <%= link_to "Add your review", new_cocktail_review_path(@cocktail.id), cocktail: @cocktail, review: @review, class: "newreview" %>
+        <%= link_to "Add your review", new_cocktail_review_path(@cocktail[:id]), cocktail: @cocktail, review: @review, class: "newreview" %>
       </div>
       <% if @cocktail.reviews.empty? %>
         <p>Be the first to let a review!</p>
@@ -76,11 +76,9 @@
               <div class="review-content">
                 <div><%= review.author %> - <%= review.comment %></div>
                 <div>
-
                   <%= link_to review_path(review), method: :delete, class: "review-delete", data: { confirm: "Are you sure?" } do %>
                     <i class="fa-regular fa-trash-can"></i>
                   <% end %>
-
                 </div>
               </div>
             </div>
