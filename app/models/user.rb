@@ -2,8 +2,8 @@ class User < ApplicationRecord
   acts_as_favoritor
 
   has_many :cockatils, dependent: :destroy
-  has_many :reviews
-  has_many :ingredients
+  has_many :reviews, dependent: :destroy
+  has_many :ingredients, dependent: :destroy
 
   validates :name, presence: true, length: { in: 2..26 }
 
