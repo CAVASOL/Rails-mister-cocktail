@@ -41,9 +41,9 @@
                 <td><%= dose.ingredient.name %></td>
                 <td><%= dose.description %></td>
                 <td>
-                  <%= link_to edit_cocktail_dose_path(dose), method: :get, class: "tablecon-e" do %>
-                    <i class="fa-regular fa-pen-to-square"></i>
-                  <% end %>
+                  <%# <%= link_to edit_cocktail_dose_path(dose), method: :get, class: "tablecon-e" do %>
+                    <%# <i class="fa-regular fa-pen-to-square"></i> %>
+                  <%# <% end %>
                   <%= link_to dose_path(dose), method: :delete, class: "tablecon-d", data: { confirm: "Are you sure?" } do %>
                     <i class="fa-regular fa-trash-can"></i>
                   <% end %>
@@ -76,11 +76,11 @@
               <div class="review-content">
                 <div><%= review.author %> - <%= review.comment %></div>
                 <div>
-                <% if current_user == @review.user %>
+
                   <%= link_to review_path(review), method: :delete, class: "review-delete", data: { confirm: "Are you sure?" } do %>
                     <i class="fa-regular fa-trash-can"></i>
                   <% end %>
-                <% end %>
+
                 </div>
               </div>
             </div>
