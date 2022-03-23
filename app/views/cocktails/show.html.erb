@@ -76,9 +76,11 @@
               <div class="review-content">
                 <div><%= review.author %> - <%= review.comment %></div>
                 <div>
+                <% if current_user == @review.user %>
                   <%= link_to review_path(review), method: :delete, class: "review-delete", data: { confirm: "Are you sure?" } do %>
                     <i class="fa-regular fa-trash-can"></i>
                   <% end %>
+                <% end %>
                 </div>
               </div>
             </div>
