@@ -4,13 +4,14 @@ Rails.application.routes.draw do
   root to: 'cocktails#index'
 
   resources :cocktails do
-    resources :ingredients
-    resources :doses
-    resources :reviews
-    resources :favorites
+    resources :ingredients, only: %i[new create]
+    resources :doses, only: %i[new create edit update]
+    resources :reviews, only: %i[new create edit update]
+    resources :favorites, only: [:create]
     delete 'favorites', to: 'favorites#destroy'
   end
 
+  resources :doses, only: :destroy
   resources :ingredients, only: :destroy
   resources :reviews, only: :destroy
 
