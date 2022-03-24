@@ -2,6 +2,10 @@
 
 # app/controllers/ingredients_controller.rb
 class IngredientsController < ApplicationController
+  def index
+    @ingredients = Ingredient.all
+  end
+
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.new

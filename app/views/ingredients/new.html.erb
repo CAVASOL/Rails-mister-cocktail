@@ -17,28 +17,23 @@
       </div>
     <% end %>
   </div>
-</div>
 
-<div class="ing-table">
-  <table>
-    <thead>
-      <th>Ingredient</th>
-      <th>Action</th>
-    </thead>
-    <tbody>
-      <% @ingredients.each do |ingredient| %>
-        <tr>
-          <td><%= ingredient.name %></td>
-          <td>
-            <%= link_to ingredient_path(ingredient), method: :delete, class: "tablecon-d", data: { confirm: "Are you sure?" } do %>
-              <i class="fa-regular fa-trash-can"></i>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="ing-multi">
+    <div class="form-group">
+    <label for="exampleFormControlSelect2">Ingredients</label>
+      <select multiple class="ing-form-control" id="exampleFormControlSelect2">
+        <% @ingredients.each do |ingredient| %>
+          <div class="ing-content">
+            <option>
+              <%= link_to ingredient_path(ingredient), method: :delete, class: "ingredient-delete", data: { confirm: "Are you sure?" } do %>
+                <p><%= ingredient.name %><i class="fa-regular fa-trash-can"></i></p>
+              <% end %>
+            </option>
+          </div>
+        <% end %>
+      </select>
+    </div>
+  </div>
 </div>
-
 
 <%= render 'shared/footer' %>

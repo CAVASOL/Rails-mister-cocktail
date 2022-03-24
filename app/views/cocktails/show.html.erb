@@ -56,7 +56,7 @@
     </div>
 
     <div class="detail mt-5">
-      <p><i class="fa-solid fa-bookmark m-0"></i> Reviews </p>
+      <p><i class="fa-solid fa-comments"></i> Reviews </p>
       <div class="new-review">
         <%= link_to "Add your review", new_cocktail_review_path(@cocktail[:id]), cocktail: @cocktail, review: @review, class: "newreview" %>
       </div>
@@ -89,8 +89,14 @@
       </div>
     </div>
     <div class="cocktail-show-actions">
-      <%# <%= link_to "Save", "#", class: "cocktail-save" %>
-      <%= link_to "Share", "#", class: "cocktail-share" %>
+      <%= link_to "#", class: "cocktail-save" do %>
+        <%# <i class="fa-solid fa-plus"></i><br> %>
+        <p>Favorite</p>
+      <% end %>
+      <%= link_to "#", class: "cocktail-share" do %>
+        <%# <i class="fa-solid fa-share-nodes"></i><br> %>
+        <p>Share</p>
+      <% end %>
     </div>
   </div>
 </div>
