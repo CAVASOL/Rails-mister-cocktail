@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   end
 
   resources :doses, only: :destroy
-  resources :ingredients, %i[index destroy]
+  resources :ingredients, only: :destroy
   resources :reviews, only: :destroy
 
   get '/users/:id', to: 'users#show', as: 'users'
   get 'profile', to: 'users#profile', as: 'profile'
   get 'explore', to: 'cocktails#explore', as: 'explore'
   get 'mypage', to: 'cocktails#mypage', as: 'mypage'
+  get 'index', to: 'ingredients#index', as: 'ingredient_index'
+  get 'new', to: 'ingredients#new', as: 'ingredient_new'
 end

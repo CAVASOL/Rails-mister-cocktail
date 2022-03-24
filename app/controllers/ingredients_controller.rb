@@ -4,19 +4,20 @@
 class IngredientsController < ApplicationController
   def index
     @ingredients = Ingredient.all
-  end
-
-  def new
-    @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.new
 
-    @ingredients = Ingredient.all
     if params[:query].present?
       @query = params[:query]
       @ingredients = Ingredient.where('name ILIKE ?', "%#{params[:query]}%")
     else
       @ingredients = Ingredient.all
     end
+  end
+
+  def new
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @ingredients = Ingredient.all
+    @ingredient = Ingredient.new
   end
 
   def create

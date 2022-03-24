@@ -1,0 +1,23 @@
+<h1>haha</h1>
+
+
+<table class="ing-table">
+  <thead>
+    <th>Ingredient</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.name %></td>
+        <td>
+          <%= link_to ingredient_path(ingredient), method: :delete, class: "ingredient-delete", data: { confirm: "Are you sure?" } do %>
+            <i class="fa-regular fa-trash-can"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render 'shared/footer' %>
