@@ -57,6 +57,7 @@ end
 end
 
 cocktail_1 = Cocktail.new(
+  user_id: User.first.id,
   name: 'Old fashioned',
   instruction: 'Add the sugar and bitters to a rocks glass, then add the water,
                 and stir until the sugar is nearly dissolved. Fill the glass
@@ -69,6 +70,7 @@ cocktail_1.photo.attach(io: pic_1, filename: 'Old-fashioned.jpg', content_type: 
 cocktail_1.save!
 
 cocktail_2 = Cocktail.new(
+  user_id: User.first.id,
   name: 'Negroni',
   instruction: 'Add the gin, Campari and sweet vermouth to a mixing glass filled
                 with ice, and stir until well-chilled. Strain into a rocks glass
@@ -80,6 +82,7 @@ cocktail_2.photo.attach(io: pic_2, filename: 'Negroni.jpg', content_type: 'image
 cocktail_2.save!
 
 cocktail_3 = Cocktail.new(
+  user_id: User.first.id,
   name: 'Boiler Room',
   instruction: 'Add the bourbon, ginger liqueur, marigold tea, lemon juice and
                 honey syrup into a pint glass filled with ice and stir to combine.
@@ -92,6 +95,7 @@ cocktail_3.photo.attach(io: pic_3, filename: 'Boiler-room.jpg', content_type: 'i
 cocktail_3.save!
 
 cocktail_4 = Cocktail.new(
+  user_id: User.second.id,
   name: 'Bourbon Rosemary Punch',
   instruction: 'Combine the rosemary-infused Aperol, bourbon, honey syrup and
                 grapefruit juice in a punch bowl and add large ice cubes. For
@@ -106,6 +110,7 @@ cocktail_4.photo.attach(io: pic_4, filename: 'Bourbon-rosemary.jpg', content_typ
 cocktail_4.save!
 
 cocktail_5 = Cocktail.new(
+  user_id: User.second.id,
   name: 'Bourbon Strawberry Iced Tea',
   instruction: 'Add the strawberries and lemon juice into a shaker and gently muddle.
                 Add the bourbon and simple syrup, add ice, and shake until well-chilled.
@@ -118,6 +123,7 @@ cocktail_5.photo.attach(io: pic_5, filename: 'Iced-tea.jpg', content_type: 'imag
 cocktail_5.save!
 
 cocktail_6 = Cocktail.new(
+  user_id: User.second.id,
   name: 'Bordeaux Sour',
   instruction: 'In a shaker, muddle the cherry and maple syrup. Add the bourbon,
                 red wine, lemon juice and orange bitters with ice, and shake until
@@ -130,6 +136,7 @@ cocktail_6.photo.attach(io: pic_6, filename: 'Bordeaux-sour.jpg', content_type: 
 cocktail_6.save!
 
 cocktail_7 = Cocktail.new(
+  user_id: User.third.id,
   name: 'Manhattan',
   instruction: 'Add the bourbon (or rye), sweet vermouth and both bitters to a
                 mixing glass with ice, and stir until well-chilled. Strain into
@@ -141,6 +148,7 @@ cocktail_7.photo.attach(io: pic_7, filename: 'Manhattan.jpg', content_type: 'ima
 cocktail_7.save!
 
 cocktail_8 = Cocktail.new(
+  user_id: User.third.id,
   name: 'Millionaire',
   instruction: 'Add the bourbon, Grand Marnier, absinthe, grenadine, egg white
                 and lemon juice into a shaker and dry-shake (without ice) vigorously.
