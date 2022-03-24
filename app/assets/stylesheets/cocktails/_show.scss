@@ -17,6 +17,11 @@
   background-size: cover;
   background-position: center;
   margin: 0;
+
+  .cocktail-show-img {
+    border-radius: 4px;
+    text-align: center;
+  }
 }
 
 .cocktail-show-delete-edit {

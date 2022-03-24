@@ -11,11 +11,17 @@
 .about-dose {
   font-size: 12px;
   text-align: center;
+  margin-bottom: 20px;
 
-  & i {
+  i {
     font-size: 20px;
     margin-right: 2px;
     margin-left: 2px;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
   }
 }
 

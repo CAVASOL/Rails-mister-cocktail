@@ -12,7 +12,7 @@
   <% end %>
 </div>
 
-<h5 class="index-subtitle"> Cocktails ( <%= @cocktails.length %> ) </h5>
+<h5 class="index-subtitle"> All that Cocktails ( <%= @cocktails.length %> ) </h5>
 <div class="cocktails">
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail), class: "cocktail-card" do %>
