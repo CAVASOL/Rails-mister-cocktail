@@ -56,7 +56,12 @@
 }
 
 .ing-table {
-  height: 240px;
+  height: 100px;
+  width: 300px;
   overflow: auto;
   text-align: center;
+  border: 1px dotted #05192C;
+  border-radius: 8px;
+  margin: auto;
+  margin-bottom: 40px;
 }

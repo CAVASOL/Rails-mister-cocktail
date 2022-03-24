@@ -29,18 +29,18 @@
     </div>
   <% end %>
 
-  <% if controller_name == "cocktails" && action_name == "new" %>
+  <% if controller_name == "ingredients" && action_name == "index" %>
     <div class="icon">
-      <%= link_to new_cocktail_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-martini-glass" style="color: #B43B3B"></i>
-        <p class="text" style="color: #B43B3B"> New Receipe </p>
+      <%= link_to ingredient_index_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+        <i class="fa-solid fa-circle-info" style="color: #B43B3B"></i>
+        <p class="text" style="color: #B43B3B"> Ingredients </p>
       <% end %>
     </div>
-  <% else %>
+  <% elsif %>
     <div class="icon">
-      <%= link_to new_cocktail_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-martini-glass-empty"></i>
-        <p class="text"> New Receipe </p>
+      <%= link_to ingredient_index_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+        <i class="fa-solid fa-circle-info"></i>
+        <p class="text"> Ingredients </p>
       <% end %>
     </div>
   <% end %>
