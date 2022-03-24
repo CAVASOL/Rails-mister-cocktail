@@ -55,6 +55,18 @@
   }
 }
 
+.ingredients-index {
+  color: #05192C;
+  font-family: 'Roboto', sans-serif;
+  padding: 12px;
+
+  .ing-table-title {
+    margin: 0;
+    margin-left: 24px;
+    margin-bottom: 8px;
+  }
+}
+
 .ing-table {
   height: 100px;
   width: 300px;
@@ -64,4 +76,10 @@
   border-radius: 8px;
   margin: auto;
   margin-bottom: 40px;
+  padding: 8px;
+
+  .ingredient-delete {
+    color: orange;
+    text-decoration: none;
+  }
 }

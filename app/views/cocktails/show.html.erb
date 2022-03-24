@@ -6,7 +6,7 @@
   <div class="row">
     <p class="show-title"><%= @cocktail.name %></p>
     <div class="cocktail-img">
-      <%= cl_image_tag @cocktail.photo.key, height: 280, width: 320, crop: :fill %>
+      <%= cl_image_tag @cocktail.photo.key, height: 280, width: 320, crop: :fill, class: "cocktail-show-img" %>
     </div>
     <% if @cocktail.user == current_user %>
       <div class="cocktail-show-delete-edit">

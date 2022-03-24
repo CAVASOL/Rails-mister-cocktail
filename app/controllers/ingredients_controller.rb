@@ -23,10 +23,10 @@ class IngredientsController < ApplicationController
   def create
     @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.new(ingredient_params)
-    @ingredient.cocktail = @cocktail
-    # @cocktail.user = current_user
+    # @ingredient.cocktail = @cocktail
+    # @ingredient.user = current_user
     if @ingredient.save
-      redirect_to new_cocktail_dose_path(@cocktail)
+      redirect_to new_cocktail_dose_path(@cocktail.id)
     else
       render :new
     end
@@ -35,12 +35,12 @@ class IngredientsController < ApplicationController
   def destroy
     @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
-    redirect_to new_cocktail_ingredient_path
+    redirect_to request.referer
   end
 
   private
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :ingredient_id, :user_id)
+    params.require(:ingredient).permit(:name, :cocktail_id, :user_id)
   end
 end
