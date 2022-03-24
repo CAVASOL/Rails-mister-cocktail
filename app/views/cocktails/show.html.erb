@@ -60,31 +60,33 @@
       <div class="new-review">
         <%= link_to "Add your review", new_cocktail_review_path(@cocktail[:id]), cocktail: @cocktail, review: @review, class: "newreview" %>
       </div>
-      <% if @cocktail.reviews.empty? %>
-        <p>Be the first to let a review!</p>
-      <% else %>
-        <div class="reviews">
-          <% @cocktail.reviews.each do |review| %>
-            <div class="review">
-              <span class="badge badge-primary badge-pill">
-                <% counter = 0 %>
-                <% 5.times do %>
-                  <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-                  <% counter += 1 %>
-                <% end %>
-              </span>
-              <div class="review-content">
-                <div><%= review.author %> - <%= review.comment %></div>
-                <div>
-                  <%= link_to review_path(review), method: :delete, class: "review-delete", data: { confirm: "Are you sure?" } do %>
-                    <i class="fa-regular fa-trash-can"></i>
+      <div class="reviews">
+        <% if @cocktail.reviews.empty? %>
+          <p>Be the first to let a review!</p>
+        <% else %>
+          <div class="reviews">
+            <% @cocktail.reviews.each do |review| %>
+              <div class="review">
+                <span class="badge badge-primary badge-pill">
+                  <% counter = 0 %>
+                  <% 5.times do %>
+                    <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                    <% counter += 1 %>
                   <% end %>
+                </span>
+                <div class="review-content">
+                  <div><%= review.author %> - <%= review.comment %></div>
+                  <div>
+                    <%= link_to review_path(review), method: :delete, class: "review-delete", data: { confirm: "Are you sure?" } do %>
+                      <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="cocktail-show-actions">
       <%# <%= link_to "Save", "#", class: "cocktail-save" %>

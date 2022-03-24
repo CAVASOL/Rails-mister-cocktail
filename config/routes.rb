@@ -5,15 +5,15 @@ Rails.application.routes.draw do
 
   resources :cocktails do
     resources :ingredients, only: %i[new create]
-    resources :doses, only: %i[new create edit update]
-    resources :reviews, only: %i[new create edit update]
+    resources :doses, only: %i[new create]
+    resources :reviews, only: %i[new create]
     resources :favorites, only: [:create]
     delete 'favorites', to: 'favorites#destroy'
   end
 
   resources :doses, only: :destroy
   resources :ingredients, only: :destroy
-  resources :reviews, only: :destroy
+  resources :reviews, only: %i[new create edit update destroy]
 
   get '/users/:id', to: 'users#show', as: 'users'
   get 'profile', to: 'users#profile', as: 'profile'
