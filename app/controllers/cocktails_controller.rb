@@ -49,6 +49,7 @@ class CocktailsController < ApplicationController
     @review = Review.new
     @reviews = Review.all
     @user = current_user
+    # @user.cocktail = current_user
   end
 
   def edit
