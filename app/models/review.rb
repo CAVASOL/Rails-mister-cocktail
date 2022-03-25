@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# app/models/review.rb
 class Review < ApplicationRecord
   RATINGS = (0..5).to_a
 
