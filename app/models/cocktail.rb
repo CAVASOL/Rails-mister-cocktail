@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# app/models/cocktail.rb
 class Cocktail < ApplicationRecord
   acts_as_favoritable
 

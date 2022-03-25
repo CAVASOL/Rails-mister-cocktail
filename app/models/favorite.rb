@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# app/models/favorite.rb
 class Favorite < ApplicationRecord
   extend ActsAsFavoritor::FavoriteScopes
 

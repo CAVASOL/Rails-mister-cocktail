@@ -5,6 +5,7 @@ class IngredientsController < ApplicationController
   def index
     @ingredients = Ingredient.all
     @ingredient = Ingredient.new
+    @ingredients = Ingredient.where('name ILIKE ?', 'a%').order(:name)
 
     if params[:query].present?
       @query = params[:query]
@@ -23,8 +24,6 @@ class IngredientsController < ApplicationController
   def create
     @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.new(ingredient_params)
-    # @ingredient.cocktail = @cocktail
-    # @ingredient.user = current_user
     if @ingredient.save
       redirect_to new_cocktail_dose_path(@cocktail.id)
     else
