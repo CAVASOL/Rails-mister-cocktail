@@ -1,30 +1,66 @@
 
+<div class="ing-index-container">
 
+  <div class="ing-index-top10">
+    <h3>10 MUST-HAVE ingredients</h3>
+    <div class="top10-ing">
+      <ul>
+        <li>White Rum</li>
+        <li>Vodka</li>
+        <li>Whiskey</li>
+        <li>Dark Rum</li>
+        <li>Syrup</li>
+        <li>Limes for juice and garnish</li>
+        <li>Oranges for juice and garnishm</li>
+        <li>Soda water</li>
+        <li>Ice</li>
+        <li>Mint</li>
+      </ul>
+    </div>
+  </div>
 
-<div class="ingredients-index">
-  <h3 class="ing-table-title">Ingredients</h3>
-  <table class="ing-table">
-    <thead>
-      <th>Ingredient</th>
-      <th>Action</th>
-    </thead>
-    <tbody>
-      <% @ingredients.each do |ingredient| %>
-        <tr>
-          <td><%= ingredient.name %></td>
-          <%# <% if ingredient.user == current_user %>
-            <td>
-              <%= link_to ingredient_path(ingredient), method: :delete, class: "ingredient-delete", data: { confirm: "Are you sure?" } do %>
-                <i class="fa-regular fa-trash-can"></i>
-              <% end %>
-            </td>
-          <%# <% else%>
-            <%# <td>-</td> %>
-          <%# <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="ing-index-common">
+    <h3>About ingredients</h3>
+    <div class="common-ing">
+      <p class="common-ing-head"><strong>A common formula<br>
+      for making cocktails is<br>
+      known as the 2:1:1 ratio</strong>.</p><br>
+      <p>It means that many classic cocktails can be created with <strong>two parts alcohol
+      plus a sweet ingredient plus a sour ingredient</strong>.</p><br>
+      <p>Of course, when you start to create more advanced cocktails
+      you notice these contain a larger number of ingredients and the ratio might vary.</p><br>
+      <p>For those classic cocktails though,
+      the ones that are requested time and time again,
+      you can expect to need three essential ingredients,
+      with the odd garnish or filler thrown in as a finishing touch.</p>
+    </div>
+  </div>
+
+  <div class="ing-index-manage">
+    <h3>Manage ingredients</h3>
+    <table class="manage-ing">
+      <thead>
+        <th>Ingredient</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <% @ingredients.each do |ingredient| %>
+          <tr>
+            <td><%= ingredient.name %></td>
+            <%# <% if ingredient.user == current_user %>
+              <td>
+                <%= link_to ingredient_path(ingredient), method: :delete, class: "ingredient-delete", data: { confirm: "Are you sure?" } do %>
+                  <i class="fa-regular fa-trash-can"></i>
+                <% end %>
+              </td>
+            <%# <% else%>
+              <%# <td>-</td> %>
+            <%# <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <%= render 'shared/footer' %>

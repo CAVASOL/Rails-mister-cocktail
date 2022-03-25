@@ -55,31 +55,91 @@
   }
 }
 
-.ingredients-index {
-  color: #05192C;
-  font-family: 'Roboto', sans-serif;
-  padding: 12px;
+.ing-index-container {
 
-  .ing-table-title {
-    margin: 0;
-    margin-left: 24px;
-    margin-bottom: 8px;
+  h3 {
+    text-align: left;
+    margin-top: 40px;
+    margin-left: 40px;
   }
 }
 
-.ing-table {
-  height: 100px;
-  width: 300px;
-  overflow: auto;
-  text-align: center;
-  border: 1px dotted #05192C;
-  border-radius: 8px;
-  margin: auto;
-  margin-bottom: 40px;
-  padding: 8px;
+.ing-index-top10 {
+  color: #05192C;
+  font-family: 'Roboto', sans-serif;
 
-  .ingredient-delete {
-    color: orange;
-    text-decoration: none;
+  .top10-ing {
+    color: #05192C;
+    font-family: 'Roboto', sans-serif;
+    width: 300px;
+    text-align: justify;
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+    margin: auto;
+    padding: 1px;
+
+    li {
+      font-size: 15px;
+    }
+
+  }
+
+  .top10-ing:hover {
+    background-color: cadetblue;
+    transition: 0.8s;
+  }
+}
+
+.ing-index-common {
+  color: #05192C;
+  font-family: 'Roboto', sans-serif;
+
+  .common-ing {
+    color: #05192C;
+    font-family: 'Roboto', sans-serif;
+    width: 280px;
+    height: 340px;
+    text-align: justify;
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+    margin: auto;
+    padding: 10px;
+
+    .common-ing-head {
+      text-align: center;
+    }
+
+    p {
+      margin: 0;
+      font-size: 15px;
+    }
+  }
+
+  .common-ing:hover {
+    background: wheat;
+    transition: 0.8s;
+  }
+}
+
+.ing-index-manage {
+  color: #05192C;
+  font-family: 'Roboto', sans-serif;
+
+  .manage-ing {
+    display: block;
+    height: 360px;
+    width: 300px;
+    overflow: auto;
+    text-align: center;
+    border: 1px dotted #05192C;
+    border-radius: 8px;
+    margin: auto;
+
+    .ingredient-delete {
+      color: orange;
+      text-decoration: none;
+    }
   }
 }
