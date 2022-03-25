@@ -7,6 +7,8 @@
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
     <div class="edit-form-inputs">
+      <%= f.input :name,
+                  input_html: { class: "edit-user-input" } %>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
