@@ -15,7 +15,6 @@ cocktail_db_serialized = open(url).read
 cocktail_db = JSON.parse(cocktail_db_serialized)
 cocktail_db['drinks'].each do |ingredient|
   Ingredient.create!(name: ingredient['strIngredient1'])
-  Ingredient.where('name ILIKE ?', 'a%').order(:name)
 end
 
 100.times do
