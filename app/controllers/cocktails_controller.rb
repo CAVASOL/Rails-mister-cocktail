@@ -69,7 +69,11 @@ class CocktailsController < ApplicationController
     redirect_to cocktails_path
   end
 
-  def mypage; end
+  def mypage
+    @my_cocktails = current_user.cocktails
+
+    @favorited = current_user.all_favorited
+  end
 
   private
 
