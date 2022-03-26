@@ -73,6 +73,7 @@ class CocktailsController < ApplicationController
     # @my_cocktails = current_user.cocktails
     @my_ingredients = current_user.ingredients
     @my_review = current_user.reviews
+
     @favorited = current_user.all_favorited
   end
 

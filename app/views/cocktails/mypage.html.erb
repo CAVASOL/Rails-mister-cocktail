@@ -1,16 +1,42 @@
 
 Hello, <%= current_user.name %>!
 
-<div class="mypage-fav">
-  <h3>My Favs</h3>
-  <% if @my_ingredients.present? %>
-    <% @my_ingredients.each do |my_ingredient| %>
-      <%= my_ingredient.name %>
+
+<h2 class="dash-title ml-3"> <strong>My Favs</strong> </h2>
+<% if @favorited.empty? %>
+  <p class="d-text m-3 text-secondary" style="text-align: left;">Shall we search favorite cocktail?</p>
+<% end %>
+<div class="project-list">
+  <div class="d-flex flex-wrap justify-content-center">
+    <% @favorited.each do |cocktail| %>
+      <%= link_to cocktail, class: "text-dark text-decoration-none" do %>
+        <div class="card-product mb-4">
+
+          <div class="my-fav">
+            <% if user_signed_in? && !current_user.favorited?(cocktail) %>
+              <div class="cocktail-fav" data-aos="zoon-in" style="background-image: url('<%= cl_image_path cocktail.photo.key, crop: :fill, class: "cocktail-show-img" %>')">
+                <%= link_to cocktail_favorites_path(cocktail), class: "fav-btn", method: :post do %>
+                  <p class="fav-ibtn"><i class="far fa-heart"></i></p>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="cocktail-fav" data-aos="zoon-in" style="background-image: url('<%= cl_image_path cocktail.photo.key, crop: :fill, class: "cocktail-show-img" %>')">
+                <%= link_to cocktail_favorites_path(cocktail), class: "fav-btn", method: :delete do %>
+                  <p class="fav-ibtn"><i class="fas fa-heart" style="color: #CE326A"></i></p>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
     <% end %>
-  <% else %>
-    <p>You haven't update ingredients!</p>
-  <% end %>
+  </div>
 </div>
+
+
+
+
 
 
 <div class="mypage-ing">
