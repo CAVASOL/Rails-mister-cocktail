@@ -1,2 +1,36 @@
 
 Hello, <%= current_user.name %>!
+
+<div class="mypage-fav">
+  <h3>My Favs</h3>
+  <% if @my_ingredients.present? %>
+    <% @my_ingredients.each do |my_ingredient| %>
+      <%= my_ingredient.name %>
+    <% end %>
+  <% else %>
+    <p>You haven't update ingredients!</p>
+  <% end %>
+</div>
+
+
+<div class="mypage-ing">
+  <h3>My Ingredients</h3>
+  <% if @my_ingredients.present? %>
+    <% @my_ingredients.each do |my_ingredient| %>
+      <%= my_ingredient.name %>
+    <% end %>
+  <% else %>
+    <p>You haven't update ingredients!</p>
+  <% end %>
+</div>
+
+<div class="mypage-review">
+  <h3>My Reviews</h3>
+  <% if @my_reviews.present? %>
+    <% @my_reviews.each do |my_review| %>
+      <%= my_review.comment %>
+    <% end %>
+  <% else %>
+    <p>You haven't leave reviews!</p>
+  <% end %>
+</div>
