@@ -14,7 +14,9 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import { searchScroll } from "./search_scroll"
+import { shareCocktail } from "./share_cocktail";
 
 document.addEventListener('turbolinks:load', () => {
   searchScroll();
+  shareCocktail()
 });
