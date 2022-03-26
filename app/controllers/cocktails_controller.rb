@@ -2,7 +2,7 @@
 
 # app/controllers/cocktails_controller.rb
 class CocktailsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index explore show]
+  skip_before_action :authenticate_user!, only: %i[index explore]
 
   def index
     @cocktails = Cocktail.first(4)
@@ -49,7 +49,6 @@ class CocktailsController < ApplicationController
     @review = Review.new
     @reviews = Review.all
     @user = current_user
-    # @user.cocktail = current_user
   end
 
   def edit
@@ -70,8 +69,11 @@ class CocktailsController < ApplicationController
   end
 
   def mypage
-    @my_cocktails = current_user.cocktails
+    # @cocktail.user = current_user
+    # @my_cocktails = current_user.cocktails
 
+    @my_ingredients = current_user.ingredients
+    @my_review = current_user.reviews
     @favorited = current_user.all_favorited
   end
 
