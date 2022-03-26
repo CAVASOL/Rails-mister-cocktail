@@ -44,11 +44,17 @@
     font-size: 16px;
     text-decoration: none;
     color: #05192C;
+
+    p {
+      margin: 0;
+      margin-bottom: 48px;
+    }
   }
 
   .mypage-fav-ibtn {
     text-align: right;
     font-size: 24px;
+    margin: 0;
+    align-items: flex-end;
   }
-
 }
