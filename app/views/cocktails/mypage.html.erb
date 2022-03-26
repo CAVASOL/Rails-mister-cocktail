@@ -3,7 +3,8 @@
 <div class="mypage-subt">
   <h2>My Favorites</h2>
   <% if @favorited.empty? %>
-    <p>Shall we search favorite cocktail?</p>
+    <p>You don't have any favorites!</p>
+    <div class="mypage-exbtn"><%= link_to "Go to Explore", explore_path, mathod: :get, class: "mypage-exbtn" %></div>
   <% end %>
 <div>
 
