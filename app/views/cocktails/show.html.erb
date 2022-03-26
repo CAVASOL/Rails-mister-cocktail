@@ -1,42 +1,61 @@
 <div class="top-nav">
-  <p class=> <i class="fa-solid fa-angles-left"></i> <%= link_to "Back", :back, class: "back" %></p>
+  <p><i class="fa-solid fa-angles-left"></i> <%= link_to "Back", :back, class: "back" %></p>
 </div>
 
 <div class="container">
   <div class="row">
-    <p class="show-title"><%= @cocktail.name %></p>
-    <div class="cocktail-img">
-      <%= cl_image_tag @cocktail.photo.key, height: 280, width: 320, crop: :fill, class: "cocktail-show-img" %>
-    </div>
-    <% if @cocktail.user == current_user %>
-      <div class="cocktail-show-delete-edit">
-        <%= link_to "Delete", @cocktail_path, method: :delete, class: "cocktail-delete", data: { confirm: "Are you sure?" } %>
-        <p>|</p>
-        <%= link_to "Edit", @edit_cocktail_path, method: :get, class: "cocktail-edit" %>
-      </div>
-    <% end %>
-    <div class="detail">
-      <p><i class="fa-solid fa-book-open"></i> Instruction </p>
-      <p><%= @cocktail.instruction %></p>
 
-      <div class="new-ingredient">
-        <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), cocktail: @cocktail, dose: @dose, class: "new-ingredient" %>
+      <p class="show-title"><%= @cocktail.name %></p>
+      <div class="cocktail-img">
+        <%= cl_image_tag @cocktail.photo.key, height: 280, width: 320, crop: :fill, class: "cocktail-show-img" %>
       </div>
-      <table class="cocktail-show-table">
-        <thead>
-          <th>Ingredient</th>
-          <th>Description</th>
-          <th>Action</th>
-        </thead>
-        <tbody>
-          <% if @cocktail.doses.empty? %>
-            <tr>
-              <td><p> 0 </p></td>
-              <td><p> 0 </p></td>
-              <td><p> None </p></td>
-            </tr>
-          <% else %>
-            <% @cocktail.doses.each do |dose| %>
+
+      <% if user_signed_in? && current_user != @cocktail.user %>
+        <% if current_user && !current_user.favorited?(@cocktail) %>
+          <div class="my-fav">
+            <%= link_to cocktail_favourites_path(@cocktail), class: "fav-btn", method: :post do %>
+              <p>Fav</p>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="my-fav">
+            <%= link_to cocktail_favourites_path(@cocktail), class: "fav-btn", method: :delete do %>
+              <p>Fav</p>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+
+
+
+      <% if @cocktail.user == current_user %>
+        <div class="cocktail-show-delete-edit">
+          <%= link_to "Delete", @cocktail_path, method: :delete, class: "cocktail-delete", data: { confirm: "Are you sure?" } %>
+          <p>|</p>
+          <%= link_to "Edit", @edit_cocktail_path, method: :get, class: "cocktail-edit" %>
+        </div>
+      <% end %>
+      <div class="detail">
+        <p><i class="fa-solid fa-book-open"></i> Instruction </p>
+        <p><%= @cocktail.instruction %></p>
+
+        <div class="new-ingredient">
+          <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), cocktail: @cocktail, dose: @dose, class: "new-ingredient" %>
+        </div>
+        <table class="cocktail-show-table">
+          <thead>
+            <th>Ingredient</th>
+            <th>Description</th>
+            <th>Action</th>
+          </thead>
+          <tbody>
+            <% if @cocktail.doses.empty? %>
+              <tr>
+                <td><p> 0 </p></td>
+                <td><p> 0 </p></td>
+                <td><p> None </p></td>
+              </tr>
+            <% else %>
               <tr>
                 <td><%= dose.ingredient.name %></td>
                 <td><%= dose.description %></td>
@@ -50,10 +69,10 @@
                 </td>
               </tr>
             <% end %>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+          </tbody>
+        </table>
+      </div>
+
 
     <div class="detail mt-5">
       <p><i class="fa-solid fa-comments"></i> Reviews </p>
@@ -88,13 +107,12 @@
         <% end %>
       </div>
     </div>
+
     <div class="cocktail-show-actions">
-      <%= link_to "#", class: "cocktail-save" do %>
-        <%# <i class="fa-solid fa-plus"></i><br> %>
-        <p>Favorite</p>
-      <% end %>
+      <%# <%= link_to "#", class: "cocktail-save" do %>
+        <%# <p>Favorite</p> %>
+      <%# <% end %>
       <%= link_to "#", class: "cocktail-share" do %>
-        <%# <i class="fa-solid fa-share-nodes"></i><br> %>
         <p>Share</p>
       <% end %>
     </div>

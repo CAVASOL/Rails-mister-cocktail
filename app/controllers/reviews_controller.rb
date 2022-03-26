@@ -11,9 +11,9 @@ class ReviewsController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
     @review = Review.new(review_params)
     @review.cocktail = @cocktail
-    # @review.user = current_user
+    @review.user = current_user
     if @review.save
-      redirect_to cocktail_path(@cockatil.id)
+      redirect_to cocktail_path(@cocktail.id)
     else
       @review = Review.new
       render 'cocktails/show'

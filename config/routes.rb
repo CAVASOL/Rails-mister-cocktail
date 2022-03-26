@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :doses, only: :destroy
-  resources :ingredients, only: :destroy
+  resources :ingredients, only: %i[edit update destroy]
   resources :reviews, only: :destroy
 
   get '/users/:id', to: 'users#show', as: 'users'
