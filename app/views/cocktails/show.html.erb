@@ -6,28 +6,24 @@
   <div class="row">
 
       <p class="show-title"><%= @cocktail.name %></p>
-      <div class="cocktail-img">
+      <%# <div class="cocktail-img">
         <%= cl_image_tag @cocktail.photo.key, height: 280, width: 320, crop: :fill, class: "cocktail-show-img" %>
-      </div>
-
-      <% if user_signed_in? && current_user != @cocktail.user %>
-        <% if current_user && !current_user.favorited?(@cocktail) %>
-          <div class="my-fav">
-            <%= link_to cocktail_favourites_path(@cocktail), class: "fav-btn", method: :post do %>
-              <p>Fav</p>
+      <%# </div> %>
+      <div class="cocktail-show-img">
+        <% if user_signed_in? && !current_user.favorited?(@cocktail) %>
+          <div class="cocktail-fav" data-aos="zoon-in" style="background-image: url('<%= cl_image_path @cocktail.photo.key, crop: :fill, class: "cocktail-show-img" %>')">
+            <%= link_to cocktail_favorites_path(@cocktail), class: "fav-btn", method: :post do %>
+              <p class="fav-ibtn"><i class="far fa-heart"></i></p>
             <% end %>
           </div>
         <% else %>
-          <div class="my-fav">
-            <%= link_to cocktail_favourites_path(@cocktail), class: "fav-btn", method: :delete do %>
-              <p>Fav</p>
+          <div class="cocktail-fav" data-aos="zoon-in" style="background-image: url('<%= cl_image_path @cocktail.photo.key, crop: :fill, class: "cocktail-show-img" %>')">
+            <%= link_to cocktail_favorites_path(@cocktail), class: "fav-btn", method: :delete do %>
+              <p class="fav-ibtn"><i class="fas fa-heart" style="color: #CE326A"></i></p>
             <% end %>
           </div>
         <% end %>
-      <% end %>
-
-
-
+      </div>
       <% if @cocktail.user == current_user %>
         <div class="cocktail-show-delete-edit">
           <%= link_to "Delete", @cocktail_path, method: :delete, class: "cocktail-delete", data: { confirm: "Are you sure?" } %>
