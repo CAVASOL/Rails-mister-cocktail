@@ -12,15 +12,23 @@
   margin-bottom: 32px;
 }
 
-.cocktail-img {
-  text-align: center;
+.cocktail-fav {
+  width: 320px;
+  height: 280px;
   background-size: cover;
   background-position: center;
-  margin: 0;
+  border-radius: 4px;
+  margin: auto;
 
-  .cocktail-show-img {
-    border-radius: 4px;
-    text-align: center;
+  .fav-ibtn {
+    font-size: 28px;
+    text-align: right;
+    padding: 10px;
+    color: white;
+
+    a {
+      text-decoration: none;
+    }
   }
 }
 
