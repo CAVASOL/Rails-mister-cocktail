@@ -70,6 +70,8 @@ class CocktailsController < ApplicationController
   end
 
   def mypage
+    @cockatils = Cocktail.all
+
     # @my_cocktails = current_user.cocktails
     @my_ingredients = current_user.ingredients
     @my_review = current_user.reviews

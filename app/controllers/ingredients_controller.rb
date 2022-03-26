@@ -16,12 +16,13 @@ class IngredientsController < ApplicationController
   end
 
   def new
-    @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredients = Ingredient.all
     @ingredient = Ingredient.new
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
 
   def create
+    @ingredients = Ingredient.all
     @cocktail = Cocktail.find(params[:cocktail_id])
     @ingredient = Ingredient.new(ingredient_params)
     if @ingredient.save
