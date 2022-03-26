@@ -1,47 +1,46 @@
-
 <h3 class="mypage-title">Hello, <%= current_user.name %>!</h3>
 
+<div class="mypage-subt">
+  <h2>My Favorites</h2>
+  <% if @favorited.empty? %>
+    <p>Shall we search favorite cocktail?</p>
+  <% end %>
+<div>
 
-<h2 class="mypage-subt"> <strong>My Favorites</strong> </h2>
-<% if @favorited.empty? %>
-  <p class="d-text m-3 text-secondary" style="text-align: left;">Shall we search favorite cocktail?</p>
-<% end %>
-<div class="mypage-favist">
-  <div class="d-flex flex-wrap justify-content-center">
-    <% @favorited.each do |cocktail| %>
-      <div class="card-product mb-4">
-        <div class="mypayge-fav-cards">
-          <% if user_signed_in? && !current_user.favorited?(cocktail) %>
-            <div class="mypage-fav-card">
-              <div class="mypage-fav-img">
-                <%= cl_image_tag cocktail.photo.key, crop: :fill, class: "mypage-fav-img" %>
-              </div>
-              <div class="mypage-fav-contents">
-                <%= link_to cocktail, class: "text-dark text-decoration-none" do %>
-                  <p><%= cocktail.name %></p>
-                <% end %>
-                <%= link_to cocktail_favorites_path(cocktail), class: "fav-btn", method: :post do %>
-                  <p class="mypage-fav-ibtn"><i class="far fa-heart"></i></p>
-                <% end %>
-              </div>
-            </div>
-          <% else %>
-            <div class="mypage-fav-card">
-              <div class="mypage-fav-img">
-                <%= cl_image_tag cocktail.photo.key, crop: :fill, class: "mypage-fav-img" %>
-              </div>
-              <div class="mypage-fav-contents">
-                <%= link_to cocktail, class: "mypage-fav-contents-text" do %>
-                  <p><%= cocktail.name %></p>
-                <% end %>
-                <%= link_to cocktail_favorites_path(cocktail), class: "fav-btn", method: :delete do %>
-                  <p class="mypage-fav-ibtn"><i class="fas fa-heart" style="color: #CE326A"></i></p>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
+<div class="mypage-favlist">
+  <% @favorited.each do |cocktail| %>
+    <div class="mypayge-fav-cards">
+      <% if user_signed_in? && !current_user.favorited?(cocktail) %>
+        <div class="mypage-fav-card">
+          <div class="mypage-fav-img">
+            <%= cl_image_tag cocktail.photo.key, crop: :fill, class: "mypage-fav-img" %>
+          </div>
+          <div class="mypage-fav-contents">
+            <%= link_to cocktail_favorites_path(cocktail), class: "fav-btn", method: :post do %>
+              <p class="mypage-fav-ibtn"><i class="far fa-heart"></i></p>
+            <% end %>
+            <%= link_to cocktail, class: "myfav-cardt" do %>
+              <p class="myfav-cardt"><%= cocktail.name.titleize %></p>
+              <p class="myfav-morei"><i class="fa-solid fa-arrow-up-right-from-square"></i>More information</p>
+            <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% else %>
+        <div class="mypage-fav-card">
+          <div class="mypage-fav-img">
+            <%= cl_image_tag cocktail.photo.key, crop: :fill, class: "mypage-fav-img" %>
+          </div>
+          <div class="mypage-fav-contents">
+            <%= link_to cocktail_favorites_path(cocktail), class: "fav-btn", method: :delete do %>
+              <p class="mypage-fav-ibtn"><i class="fas fa-heart" style="color: #CF416A"></i></p>
+            <% end %>
+            <%= link_to cocktail, class: "myfav-cardt" do %>
+              <p class="myfav-cardt"><%= cocktail.name.titleize %></p>
+              <p class="myfav-morei"><i class="fa-solid fa-arrow-up-right-from-square"></i>More information</p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
