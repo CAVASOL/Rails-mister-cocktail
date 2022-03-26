@@ -1,0 +1,54 @@
+.mypage-title {
+  color: #05192C;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin: 0;
+  margin-top: 48px;
+}
+
+
+.mypage-subt {
+  color: #05192C;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  margin-top: 40px;
+  margin-left: 28px;
+}
+
+
+.mypage-fav-card {
+  width: 320px;
+  height: 120px;
+  border: 1px solid #05192C;
+  display: flex;
+  border-radius: 4px;
+  margin: auto;
+  margin-bottom: 20px;
+  color: #05192C;
+  font-family: 'Roboto', sans-serif;
+
+  .mypage-fav-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .mypage-fav-contents {
+    padding: 12px;
+    width: 200px;
+  }
+
+  .mypage-fav-contents-text {
+    font-size: 16px;
+    text-decoration: none;
+    color: #05192C;
+  }
+
+  .mypage-fav-ibtn {
+    text-align: right;
+    font-size: 24px;
+  }
+
+}
