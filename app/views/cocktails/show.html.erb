@@ -33,7 +33,6 @@
     <div class="detail">
       <p><i class="fa-solid fa-book-open"></i> Instruction </p>
       <p><%= @cocktail.instruction %></p>
-
       <div class="new-ingredient">
         <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), cocktail: @cocktail, dose: @dose, class: "new-ingredient" %>
       </div>
@@ -44,29 +43,29 @@
           <th>Action</th>
         </thead>
         <tbody>
-          <% if @cocktail.doses.empty? %>
-            <tr>
-              <td><p> 0 </p></td>
-              <td><p> 0 </p></td>
-              <td><p> None </p></td>
-            </tr>
-          <% else %>
-            <tr>
-              <td><%= @dose.ingredient.name %></td>
-              <td><%= @dose.description %></td>
-              <td>
-                <%# <%= link_to edit_cocktail_dose_path(dose), method: :get, class: "tablecon-e" do %>
-                  <%# <i class="fa-regular fa-pen-to-square"></i> %>
-                <%# <% end %>
-                <%= link_to dose_path(@dose), method: :delete, class: "tablecon-d", data: { confirm: "Are you sure?" } do %>
-                  <i class="fa-regular fa-trash-can"></i>
-                <% end %>
-              </td>
-            </tr>
+          <% @cocktail.doses.each do |dose| %>
+            <% if @cocktail.doses.empty? %>
+              <tr>
+                <td><p> 0 </p></td>
+                <td><p> 0 </p></td>
+                <td><p> None </p></td>
+              </tr>
+            <% else %>
+              <tr>
+                <td><%= dose.ingredient.name %></td>
+                <td><%= dose.description %></td>
+                <td>
+                  <%= link_to dose_path(dose), method: :delete, class: "tablecon-d", data: { confirm: "Are you sure?" } do %>
+                    <i class="fa-regular fa-trash-can"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
     </div>
+
 
     <div class="detail mt-5">
       <p><i class="fa-solid fa-comments"></i> Reviews </p>
