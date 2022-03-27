@@ -43,14 +43,14 @@
           <th>Action</th>
         </thead>
         <tbody>
-          <% @cocktail.doses.each do |dose| %>
-            <% if @cocktail.doses.empty? %>
-              <tr>
-                <td><p> 0 </p></td>
-                <td><p> 0 </p></td>
-                <td><p> None </p></td>
-              </tr>
-            <% else %>
+          <% if @cocktail.doses.empty? %>
+            <tr>
+              <td> 0 </td>
+              <td> 0 </td>
+              <td> None </td>
+            </tr>
+          <% else %>
+            <% @cocktail.doses.each do |dose| %>
               <tr>
                 <td><%= dose.ingredient.name %></td>
                 <td><%= dose.description %></td>
