@@ -27,7 +27,7 @@
   </div>
   <div class="samples">
     <% @cocktails.map do |cocktail| %>
-      <%= link_to cocktail_path(cocktail), class: "text-dark text-decoration-none" do %>
+      <%= link_to cocktail_path(cocktail), class: "sample-contents" do %>
         <div class="sample-card" data-aos="zoon-in" style="background-image: url('<%= cl_image_path cocktail.photo.key, crop: :fill %>')">
           <p class="name"><%= cocktail.name.titleize %></p>
         </div>
