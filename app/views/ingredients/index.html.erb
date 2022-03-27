@@ -3,6 +3,16 @@
   <div class="ing-index-sub">
     <div class="ing-index-common">
       <h3>About Ingredients</h3>
+      <div class="ing-index-about">
+        <div class="d-flex justify-content-center">
+          <div class="ing-index-about-contents">
+            <div class="ing-index-about-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "ingredients.jpeg" %>)">
+              <p class="ing-index-about-text">Cocktail<br> Ingredients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="common-ing">
         <p class="common-ing-head"><strong>A common formula<br>
         for making cocktails is<br>
@@ -16,50 +26,52 @@
         you can expect to need three essential ingredients,
         with the odd garnish or filler thrown in as a finishing touch.</p>
       </div>
-      <div class="ing-index-top10">
-      <h3>10 MUST-HAVE Ingredients</h3>
-        <div class="top10-ing">
-          <ul>
-            <li>White Rum</li>
-            <li>Vodka</li>
-            <li>Whiskey</li>
-            <li>Dark Rum</li>
-            <li>Syrup</li>
-            <li>Limes for juice and garnish</li>
-            <li>Oranges for juice and garnishm</li>
-            <li>Soda water</li>
-            <li>Ice</li>
-            <li>Mint</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
 
-  <div class="ing-index-manage">
-    <h3>Manage ingredients</h3>
-    <table class="manage-ing">
-      <thead>
-        <th>Ingredient</th>
-        <th>Action</th>
-      </thead>
-      <tbody>
-        <% @ingredients.each do |ingredient| %>
-          <tr>
-            <td><%= ingredient.name %></td>
-            <%# <% if ingredient.user == current_user %>
-              <td>
-                <%= link_to ingredient_path(ingredient), method: :delete, class: "ingredient-delete", data: { confirm: "Are you sure?" } do %>
-                  <i class="fa-regular fa-trash-can"></i>
-                <% end %>
-              </td>
-            <%# <% else%>
-              <%# <td>-</td> %>
-            <%# <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div>
+    <div class="ing-index-top10">
+      <h3>10 MUST-HAVE Ingredients</h3>
+      <div class="top10-ing">
+        <ul>
+          <li>White Rum</li>
+          <li>Vodka</li>
+          <li>Whiskey</li>
+          <li>Dark Rum</li>
+          <li>Syrup</li>
+          <li>Limes for juice and garnish</li>
+          <li>Oranges for juice and garnishm</li>
+          <li>Soda water</li>
+          <li>Ice</li>
+          <li>Mint</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ing-index-manage">
+      <h3>Manage ingredients</h3>
+      <table class="manage-ing">
+        <thead>
+          <th>Ingredient</th>
+          <th>Action</th>
+        </thead>
+        <tbody>
+          <% @ingredients.each do |ingredient| %>
+            <tr>
+              <td><%= ingredient.name %></td>
+              <%# <% if ingredient.user == current_user %>
+                <td>
+                  <%= link_to ingredient_path(ingredient), method: :delete, class: "ingredient-delete", data: { confirm: "Are you sure?" } do %>
+                    <i class="fa-regular fa-trash-can"></i>
+                  <% end %>
+                </td>
+              <%# <% else%>
+                <%# <td>-</td> %>
+              <%# <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 

@@ -1,9 +1,9 @@
 .samples {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 16px;
   justify-content: center;
-  padding: 16px;
+  padding: 20px;
   text-decoration: none;
 }
 
@@ -38,7 +38,9 @@
   grid-gap: 16px;
   justify-content: center;
   align-items: center;
+  margin: 0;
   padding: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .cocktail-card {
