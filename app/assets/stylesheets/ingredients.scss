@@ -90,7 +90,7 @@
     color: #05192C;
     font-family: 'Roboto', sans-serif;
     width: 280px;
-    height: 340px;
+    height: 328px;
     text-align: justify;
     border: none;
     background-color: white;
@@ -111,6 +111,43 @@
   .common-ing:hover {
     background: wheat;
     transition: 0.8s;
+  }
+}
+
+.ing-index-about {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+
+  .ing-index-about-contents {
+    text-decoration: none;
+    color: white;
+    font-family: 'Monoton', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+    .ing-index-about-img {
+      width: 300px;
+      height: 200px;
+      border-radius: 6px;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .ing-index-about-text {
+      margin: 0;
+      font-weight: lighter;
+      font-size: 28px;
+      text-align: left;
+      margin-top: 104px;
+      margin-left: 12px;
+    }
   }
 }
 

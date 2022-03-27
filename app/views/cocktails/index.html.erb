@@ -10,9 +10,20 @@
   </div>
 </div>
 
+<div class="explore-mix">
+  <h5 class="index-subtitle">New Cocktail</h5>
+  <div class="d-flex justify-content-center">
+    <%= link_to new_cocktail_path, class: "explore-mix-contents" do %>
+      <div class="explore-mix-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "mix.jpeg" %>)">
+        <p class="explore-mix-text">Mix<br> new<br> Cockatil</p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <div class="row">
   <div>
-    <h5 class="index-subtitle"> Cocktails ( <%= @cocktails.length %> ) </h5>
+    <h5 class="index-subtitle"> Hipsters ( <%= @cocktails.length %> ) </h5>
   </div>
   <div class="samples">
     <% @cocktails.map do |cocktail| %>
