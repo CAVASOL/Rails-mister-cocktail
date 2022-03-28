@@ -54,22 +54,23 @@
   }
 }
 
-.detail {
+.detail-dose {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.detail-review {
   padding: 10px;
 }
 
 .cocktail-show-table {
   border: 1px dotted #05192C;
-  width: 320px;
+  width: 330px;
   text-align: center;
-  // border-style: dotted;
   border-radius: 8px;
   padding: 4px;
   font-size: 12px;
-  justify-content: center;
-  margin: 0;
-  align-items: center;
-  justify-content: center;
+  margin: auto;
 
   td {
     margin: 0;

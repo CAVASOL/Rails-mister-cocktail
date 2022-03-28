@@ -1,5 +1,5 @@
 <div class="top-nav">
-  <p><i class="fa-solid fa-angles-left"></i> <%= link_to "Back", explore_path, class: "back" %></p>
+  <p><i class="fa-solid fa-angles-left"></i><%= link_to "Back", explore_path, class: "back" %></p>
 </div>
 
 <div class="container">
@@ -30,7 +30,7 @@
         <%= link_to "Edit", @edit_cocktail_path, method: :get, class: "cocktail-edit" %>
       </div>
     <% end %>
-    <div class="detail">
+    <div class="detail-dose">
       <p><i class="fa-solid fa-book-open"></i> Instruction </p>
       <p><%= @cocktail.instruction %></p>
       <div class="new-ingredient">
@@ -67,7 +67,7 @@
     </div>
 
 
-    <div class="detail mt-5">
+    <div class="detail-review mt-5">
       <p><i class="fa-solid fa-comments"></i> Reviews </p>
       <div class="new-review">
         <%= link_to "Add your review", new_cocktail_review_path(@cocktail[:id]), cocktail: @cocktail, review: @review, class: "newreview" %>
