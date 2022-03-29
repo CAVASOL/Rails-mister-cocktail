@@ -1,10 +1,11 @@
 const shareCocktail = () => {
   const btn = document.getElementById("share-cocktail")
-  if (shareCocktailBtn) {
-    shareCocktailBtn.addEventListener("click", () => {
+  if (btn) {
+    btn.addEventListener("click", () => {
       const data = {
         url: window.location.href,
-        title: btn.dataset.name,
+        name: btn.dataset.name,
+        instruction: btn.dataset.instruction,
       }
 
       if (navigator.share) {
