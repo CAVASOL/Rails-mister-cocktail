@@ -18,5 +18,5 @@ import { shareCocktail } from "./share_cocktail";
 
 document.addEventListener('turbolinks:load', () => {
   searchScroll();
-  shareCocktail()
+  shareCocktail();
 });
