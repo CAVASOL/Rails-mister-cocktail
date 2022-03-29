@@ -15,9 +15,9 @@
 <h5 class="index-subtitle"> All that Cocktails ( <%= @cocktails.length %> ) </h5>
 <div class="cocktails">
   <% @cocktails.each do |cocktail| %>
-    <%= link_to cocktail_path(cocktail), class: "cocktail-card" do %>
+    <%= link_to cocktail_path(cocktail) do %>
       <div class="cocktail-card" data-aos="zoon-in" style="background-image: url('<%= cl_image_path cocktail.photo.key %>')">
-        <p> <%= cocktail.name.titleize %> </p>
+        <p class="name"> <%= cocktail.name.titleize %> </p>
       </div>
     <% end%>
   <% end %>

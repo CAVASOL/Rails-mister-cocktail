@@ -1,72 +1,70 @@
 .samples {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-  margin: 0;
   justify-content: center;
+  grid-row: auto;
   padding: 20px;
-  text-decoration: none;
 
-  .sample-contents {
-    margin: 0;
-  }
-}
-
-.sample-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // margin: 0;
-  // padding: 0;
-  height: 140px;
-  width: 179px;
-  background-size: cover;
-  border-radius: 4px;
-  text-decoration: underline;
-  color: white;
-
-  & .name {
-    color: white;
+  a {
     text-align: center;
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 17px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .name {
+      font-size: 16px;
+      padding: 20px;
+      margin-top: 40px;
+    }
   }
 
-  & a:-webkit-any-link {
-    text-decoration: none !important;
+  .sample-card {
+    width: 160px;
+    height: 140px;
+    background-size: cover;
+    text-align: center;
+    border-radius: 4px;
   }
 }
+
 
 .cocktails {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
   justify-content: center;
-  align-items: center;
-  margin: 0;
+  grid-row: auto;
   padding: 20px;
-  font-family: 'Roboto', sans-serif;
-}
 
-.cocktail-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 179px;
-  height: 140px;
-  background-size: cover;
-  border-radius: 4px;
-  margin: 0;
-  padding: 0;
-
-  & p {
-    text-decoration: underline;
-    color: white;
-    font-size: 17px;
+  a {
     text-align: center;
-    width: 110px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .name {
+    font-size: 16px;
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  .cocktail-card {
+    width: 160px;
+    height: 140px;
+    background-size: cover;
+    text-align: center;
+    border-radius: 4px;
   }
 }
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

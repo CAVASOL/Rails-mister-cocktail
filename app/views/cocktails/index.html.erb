@@ -22,12 +22,10 @@
 </div>
 
 <div class="row">
-  <div>
-    <h5 class="index-subtitle"> Cocktails ( <%= @cocktails.length %> ) </h5>
-  </div>
+  <h5 class="index-subtitle"> Cocktails </h5>
   <div class="samples">
     <% @cocktails.map do |cocktail| %>
-      <%= link_to cocktail_path(cocktail), class: "sample-contents" do %>
+      <%= link_to cocktail_path(cocktail) do %>
         <div class="sample-card" data-aos="zoon-in" style="background-image: url('<%= cl_image_path cocktail.photo.key, crop: :fill %>')">
           <p class="name"><%= cocktail.name.titleize %></p>
         </div>
