@@ -1,7 +1,7 @@
 const shareCocktail = () => {
-  const btn = document.getElementById("share-cocktail")
-  if (btn) {
-    btn.addEventListener("click", () => {
+  const shareButton = document.getElementById("share-cocktail")
+  if (shareButton) {
+    shareButton.addEventListener("click", () => {
       const data = {
         url: window.location.href,
         title: btn.dataset.name,
@@ -11,8 +11,14 @@ const shareCocktail = () => {
       if (navigator.share) {
         navigator.share(data)
       }
+    }).then(() => {
+      console.log('Thanks for sharing!')
     })
+    .catch(console.error);
+  } else {
+    // fallback
   }
-}
+};
+
 
 export { shareCocktail }
