@@ -7,12 +7,12 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import "bootstrap";
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+import "bootstrap";
 import { searchScroll } from "./search_scroll"
 import { shareCocktail } from "./share_cocktail";
 
