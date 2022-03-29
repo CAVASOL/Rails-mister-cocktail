@@ -13,10 +13,11 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "bootstrap";
-import { searchScroll } from "./search_scroll";
-import { shareCocktail } from "./share_cocktail";
+import { shareCocktail } from "./share_cocktail"
+import { searchScroll } from "./search_scroll"
+
 
 document.addEventListener('turbolinks:load', () => {
-  searchScroll();
   shareCocktail();
+  searchScroll();
 });
