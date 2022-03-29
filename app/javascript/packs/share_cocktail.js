@@ -4,8 +4,8 @@ const shareCocktail = () => {
     btn.addEventListener("click", () => {
       const data = {
         url: window.location.href,
-        name: btn.dataset.name,
-        instruction: btn.dataset.instruction,
+        title: btn.dataset.name,
+        text: btn.dataset.instruction,
       }
 
       if (navigator.share) {
