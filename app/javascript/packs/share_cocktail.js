@@ -1,5 +1,5 @@
 const shareCocktail = () => {
-  const btn = document.getElementById("share-cocktail")
+  const btn = document.getElementById(".share-cocktail")
   if (btn) {
     btn.addEventListener("click", () => {
       const data = {
