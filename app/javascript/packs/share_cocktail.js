@@ -1,19 +1,37 @@
+// const shareCocktail = () => {
+//   const btn = document.getElementById("share-cocktail")
+//   if (btn) {
+//     btn.addEventListener("click", () => {
+//       const data = {
+//         url: window.location.href,
+//         title: btn.dataset.name,
+//         text: btn.dataset.instruction,
+//       }
+
+//       if (navigator.share) {
+//         navigator.share(data)
+//       }
+//     })
+//   }
+// };
+
 const shareCocktail = () => {
-  const btn = document.getElementById("share-cocktail")
-  if (btn) {
-    btn.addEventListener("click", () => {
-      const data = {
-        url: window.location.href,
-        title: btn.dataset.name,
-        text: btn.dataset.instruction,
-      }
+  document.addEventListener("click", e => {
+    const btn = document.getElementById("share-cocktail")
+    if (btn) {
+      btn.addEventListener("click", () => {
+        const data = {
+          url: window.location.href,
+          title: btn.dataset.name,
+          text: btn.dataset.instruction,
+        }
 
-      if (navigator.share) {
-        navigator.share(data)
-      }
-    })
-  }
-};
-
+        if (navigator.share) {
+          navigator.share(data)
+        }
+      })
+    }
+  })
+}
 
 export { shareCocktail }
