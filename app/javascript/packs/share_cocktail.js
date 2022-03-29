@@ -4,19 +4,14 @@ const shareCocktail = () => {
     shareButton.addEventListener("click", () => {
       const data = {
         url: window.location.href,
-        title: btn.dataset.name,
-        text: btn.dataset.instruction,
+        title: shareButton.dataset.name,
+        text: shareButton.dataset.instruction,
       }
 
       if (navigator.share) {
         navigator.share(data)
       }
-    }).then(() => {
-      console.log('Thanks for sharing!')
     })
-    .catch(console.error);
-  } else {
-    // fallback
   }
 };
 
