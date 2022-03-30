@@ -3,7 +3,7 @@
   <h3>How can help you?</h3>
 
   <div class="session-container">
-    <%= link_to "Edit profile", edit_user_registration_path, method: :get, class: "password-btn" %>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class: "logout-btn" %>
+    <%= button_to "Edit profile", edit_user_registration_path, method: :get, class: "password-btn" %>
+    <%= button_to "Log out", destroy_user_session_path, method: :get, data: { confirm: "Are you sure?" }, class: "logout-btn" %>
   </div>
 </div>
