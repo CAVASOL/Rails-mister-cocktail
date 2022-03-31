@@ -66,6 +66,22 @@
     </div>
   <% end %>
 
+  <% if controller_name == "users" && action_name == "message" %>
+    <div class="icon">
+      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+        <i class="fa-solid fa-face-smile-wink" style="color: #B43B3B"></i>
+        <p class="text" style="color: #B43B3B"> Message </p>
+      <% end %>
+    </div>
+  <% elsif %>
+    <div class="icon">
+      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+        <i class="fa-solid fa-face-smile"></i>
+        <p class="text"> Message </p>
+      <% end %>
+    </div>
+  <% end %>
+
   <% if controller_name == "cocktails" && action_name == "mypage" %>
     <div class="icon">
       <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
