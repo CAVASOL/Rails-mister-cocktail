@@ -17,7 +17,7 @@
             <%= cl_image_tag cocktail.photo.key, crop: :fill, class: "mypage-fav-img" %>
           </div>
           <div class="mypage-fav-contents">
-            <%= link_to cocktail_favorites_path(cocktail), class: "fav-btn", method: :post do %>
+            <%= link_to  cocktail_favorites_path(cocktail), class: "fav-btn", method: :post do %>
               <p class="mypage-fav-ibtn"><i class="far fa-heart"></i></p>
             <% end %>
             <%= link_to cocktail, class: "myfav-cardt" do %>
