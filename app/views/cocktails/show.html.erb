@@ -11,13 +11,13 @@
     <div class="cocktail-show-img">
       <% if user_signed_in? && !current_user.favorited?(@cocktail) %>
         <div class="cocktail-fav" data-aos="zoon-in" style="background-image: url('<%= cl_image_path @cocktail.photo.key, crop: :fill, class: "cocktail-show-img" %>')">
-          <%= link_to cocktail_favorites_path(@cocktail), class: "fav-btn", method: :post do %>
+          <%= link_to cocktail_favorites_path(@cocktail[:id]), class: "fav-btn", method: :post do %>
             <p class="fav-ibtn"><i class="far fa-heart"></i></p>
           <% end %>
         </div>
       <% else %>
         <div class="cocktail-fav" data-aos="zoon-in" style="background-image: url('<%= cl_image_path @cocktail.photo.key, crop: :fill, class: "cocktail-show-img" %>')">
-          <%= link_to cocktail_favorites_path(@cocktail), class: "fav-btn", method: :delete do %>
+          <%= link_to cocktail_favorite_path(@cocktail[:id]), class: "fav-btn", method: :delete do %>
             <p class="fav-ibtn"><i class="fas fa-heart" style="color: #F07030"></i></p>
           <% end %>
         </div>
