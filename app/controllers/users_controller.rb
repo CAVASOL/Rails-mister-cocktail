@@ -4,8 +4,8 @@
 class UsersController < ApplicationController
   def profile; end
 
-  def inbox
-    @cocktails = Cocktail.all
-    @my_cocktails = current_user.cocktails
-  end
+  # def inbox
+  #   @cocktails = Cocktail.all
+  #   @my_cocktails = current_user.cocktails
+  # end
 end
