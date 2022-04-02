@@ -66,16 +66,16 @@
     </div>
   <% end %>
 
-  <% if controller_name == "users" && action_name == "message" %>
+  <% if controller_name == "users" && action_name == "inbox" && user_signed_in? %>
     <div class="icon">
-      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+      <%= link_to inbox_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
         <i class="fa-solid fa-comment-dots" style="color: #B43B3B"></i>
         <p class="text" style="color: #B43B3B"> Message </p>
       <% end %>
     </div>
   <% elsif %>
     <div class="icon">
-      <%= link_to mypage_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
+      <%= link_to inbox_path, method: :get, class: "navbar-link text-dark text-decoration-none" do %>
         <i class="fa-solid fa-comment-dots"></i>
         <p class="text"> Message </p>
       <% end %>

@@ -15,9 +15,10 @@ ActiveStorage.start()
 import "bootstrap";
 import { shareCocktail } from "./share_cocktail"
 import { searchScroll } from "./search_scroll"
-
+import { initChatroomCable } from "../channels/cocktail_channel"
 
 document.addEventListener('turbolinks:load', () => {
+  initChatroomCable();
   shareCocktail();
   searchScroll();
 });

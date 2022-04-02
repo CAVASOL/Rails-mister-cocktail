@@ -1,0 +1,9 @@
+<div class="message-container" id="message-<%= message.id %>">
+  <i class="author">
+    <div class= "<%= message.user == current_user ? 'my_message' : 'other_message'%>">
+    <span><%= message.user.name %></span>
+    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+    </div>
+  </i>
+  <p><%= message.content %></p>
+</div>

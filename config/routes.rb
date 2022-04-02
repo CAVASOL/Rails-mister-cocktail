@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :ingredients, only: %i[new create]
     resources :doses, only: %i[new create]
     resources :reviews, only: %i[new create]
+    resources :messages, only: %i[index create]
     resources :favorites, only: :create
     delete 'favorites', to: 'favorites#destroy'
   end
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
   get 'mypage', to: 'cocktails#mypage', as: 'mypage'
   get 'index', to: 'ingredients#index', as: 'ingredient_index'
   get 'new', to: 'ingredients#new', as: 'ingredient_new'
+  get 'inbox', to: 'users#inbox', as: 'inbox'
 end

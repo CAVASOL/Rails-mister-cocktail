@@ -1,0 +1,22 @@
+<div class="chatroom">
+  <div class="navbar-top-back">
+    <%= link_to inbox_path, class: "navbar-brand" do%>
+    <h5><i class="fas fa-chevron-left mr-1 blue-back"></i><%= @cocktail.name %></h5>
+    <% end %>
+  </div>
+
+  <div id="messages" data-cocktail-id="<%= @cocktail.id %>">
+    <% @cocktail.messages.each do |message| %>
+    <%= render "message", message: message %>
+    <% end %>
+  </div>
+
+  <div class="search-form-control">
+    <%= simple_form_for [ @cocktail, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Text.." %>
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-arrow-circle-up"></i>
+      </button>
+    <% end %>
+  </div>
+</div>
