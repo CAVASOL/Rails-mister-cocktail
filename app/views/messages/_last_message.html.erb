@@ -1,0 +1,9 @@
+<% if cocktail.messages.last %>
+  <% if cocktail.messages.last.user_id == current_user.id %>
+    <p class="message-color"><i class="fas fa-check"></i> <%= cocktail.messages.last.content.truncate(50) %> </p>
+  <% else %>
+    <p class="message-color"> <strong><%= cocktail.messages.last.user.name %></strong>: <%= cocktail.messages.last.content.truncate(50) %> </p>
+  <% end %>
+<% else %>
+  <p class="message-color"> <strong><%= current_user.name %></strong>, start the conversation now!</p>
+<% end %>

@@ -1,0 +1,36 @@
+<div class="inbox-wrapper">
+  <div class="container">
+    <h2 class="main-title font-cursive text-center mt-5">All about Cocktails <i class="far fa-comments"></i></h2>
+  </div>
+
+  <% if @my_cocktails.empty? %>
+    <div class="no-message-alert">
+      <p class="m-3 text-secondary" style="text-align: left;">Oops! You don't have any message yet.</p>
+    </div>
+  <% end %>
+
+  <div class="list" id="cocktail-inbox">
+    <div class="d-flex flex-wrap justify-content-center">
+      <% unless @my_cocktails.empty? %>
+        <div class="d-flex justify-content-start" style="width: 360px">
+          <div class="chats-tap">
+            <p>Chats</p>
+          </div>
+        </div>
+        <% @my_cocktails.each do |cocktail| %>
+          <%= link_to cocktail_messages_path(cocktail), class: "text-dark text-decoration-none cocktail-card-link", data: { "cocktail-id": cocktail.id } do %>
+            <div class="card-product-inbox bottom-chat">
+              <%= cl_image_tag cocktail.photos.key, class: "card-product-img-inbox" %>
+              <div class="card-product-infos-inbox">
+                <h2> <%= cocktail.name %> Chat Group </h2>
+                <div id="last-project-<%= cocktail.id %>-message">
+                  <%= render partial: "messages/last_message", locals: { cocktail: cocktail } %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
