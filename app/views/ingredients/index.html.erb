@@ -46,30 +46,17 @@
         </ul>
       </div>
     </div>
-    <div class="ing-index-manage">
-      <h3>Manage ingredients</h3>
-      <table class="manage-ing">
-        <thead>
-          <th>Ingredient</th>
-          <th>Action</th>
-        </thead>
-        <tbody>
+    <div class="ing-index-top10">
+      <h3>All We have - List of Ingredient</h3>
+      <div class="top10-ing">
+        <ul>
           <% @ingredients.each do |ingredient| %>
-            <tr>
-              <td><%= ingredient.name %></td>
-              <%# <% if ingredient.user == current_user %>
-                <td>
-                  <%= link_to ingredient_path(ingredient), method: :delete, class: "ingredient-delete", data: { confirm: "Are you sure?" } do %>
-                    <i class="fa-regular fa-trash-can"></i>
-                  <% end %>
-                </td>
-              <%# <% else%>
-                <%# <td>-</td> %>
-              <%# <% end %>
-            </tr>
+            <%= link_to ingredient_path(ingredient), class: "ing-info text-decoration-none text-dark", method: :get do %>
+              <li><%= ingredient.name %>  <i class="fa-solid fa-square-arrow-up-right"></i></li>
+            <% end %>
           <% end %>
-        </tbody>
-      </table>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

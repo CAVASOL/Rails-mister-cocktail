@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: 'cocktails#index'
   resources :cocktails do
-    resources :ingredients, only: %i[new create]
+    resources :ingredients, only: %i[show new create]
     resources :doses, only: %i[new create]
     resources :reviews, only: %i[new create]
     resources :messages, only: %i[index create]
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :doses, only: :destroy
-  resources :ingredients, only: %i[edit update destroy]
+  resources :ingredients, only: %i[show edit update destroy]
   resources :reviews, only: :destroy
 
   get 'profile', to: 'users#profile', as: 'profile'

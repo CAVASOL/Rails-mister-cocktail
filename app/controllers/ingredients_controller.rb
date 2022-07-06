@@ -15,6 +15,11 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def show
+    @ingredients = Ingredient.all
+    @ingredient = Ingredient.find(params[:id])
+  end
+
   def new
     @ingredients = Ingredient.all
     @ingredient = Ingredient.new
@@ -41,6 +46,6 @@ class IngredientsController < ApplicationController
   private
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :cocktail_id, :user_id)
+    params.require(:ingredient).permit(:name, :description, :photos, :cocktail_id, :user_id)
   end
 end

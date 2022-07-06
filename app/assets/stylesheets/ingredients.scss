@@ -160,7 +160,7 @@
     height: 300px;
     width: 300px;
     overflow: auto;
-    text-align: center;
+    text-align: left;
     border: 1px dotted #05192C;
     border-radius: 8px;
     margin: auto;
@@ -170,6 +170,15 @@
       text-decoration: none;
     }
   }
+
+  td {
+    margin: 0;
+  }
+}
+
+.ing-info {
+  text-decoration: none;
+  color: #05192C;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {

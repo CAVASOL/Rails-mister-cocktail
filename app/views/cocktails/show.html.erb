@@ -5,6 +5,7 @@
 <div class="container">
   <div class="row">
     <p class="show-title"><%= @cocktail.name.titleize %></p>
+    <hr>
     <%# <div class="cocktail-img">
       <%= cl_image_tag @cocktail.photo.key, height: 280, width: 320, crop: :fill, class: "cocktail-show-img" %>
     <%# </div> %>
@@ -12,22 +13,26 @@
       <% if user_signed_in? && !current_user.favorited?(@cocktail) %>
         <div class="cocktail-fav" data-aos="zoon-in" style="background-image: url('<%= cl_image_path @cocktail.photo.key, crop: :fill, class: "cocktail-show-img" %>')">
           <%= link_to cocktail_favorites_path(@cocktail), class: "fav-btn", method: :post do %>
-            <p class="fav-ibtn"><i class="far fa-heart"></i></p>
+            <p class="fav-ibtn"><i class="fa-regular fa-bookmark"></i></i></p>
           <% end %>
         </div>
       <% else %>
         <div class="cocktail-fav" data-aos="zoon-in" style="background-image: url('<%= cl_image_path @cocktail.photo.key, crop: :fill, class: "cocktail-show-img" %>')">
           <%= link_to cocktail_favorites_path(@cocktail), class: "fav-btn", method: :delete do %>
-            <p class="fav-ibtn"><i class="fas fa-heart" style="color: #F07030"></i></p>
+            <p class="fav-ibtn"><i class="fa-solid fa-bookmark" style="color: #C26D62"></i></p>
           <% end %>
         </div>
       <% end %>
     </div>
     <% if @cocktail.user == current_user %>
       <div class="cocktail-show-delete-edit">
-        <%= link_to "Delete", @cocktail_path, method: :delete, class: "cocktail-delete", data: { confirm: "Are you sure?" } %>
+        <%= link_to @edit_cocktail_path, method: :get, class: "cocktail-edit" do %>
+          <p><i class="fa-solid fa-square-pen"></i></p>
+        <% end %>
         <p>|</p>
-        <%= link_to "Edit", @edit_cocktail_path, method: :get, class: "cocktail-edit" %>
+        <%= link_to @cocktail_path, method: :delete, class: "cocktail-delete", data: { confirm: "Are you sure?" } do %>
+          <p><i class="fa-solid fa-rectangle-xmark"></i></p>
+        <% end %>
       </div>
     <% end %>
     <div class="detail-dose">
@@ -40,25 +45,31 @@
         <thead>
           <th>Ingredient</th>
           <th>Description</th>
-          <th>Action</th>
+          <% if @cocktail.user == current_user %>
+            <th>Delete</th>
+          <% end %>
         </thead>
         <tbody>
           <% if @cocktail.doses.empty? %>
             <tr>
               <td> 0 </td>
               <td> 0 </td>
-              <td> None </td>
+              <% if @cocktail.user == current_user %>
+                <td> None </td>
+              <% end %>
             </tr>
           <% else %>
             <% @cocktail.doses.each do |dose| %>
               <tr>
                 <td><%= dose.ingredient.name %></td>
                 <td><%= dose.description %></td>
-                <td>
-                  <%= link_to dose_path(dose), method: :delete, class: "tablecon-d", data: { confirm: "Are you sure?" } do %>
-                    <i class="fa-regular fa-trash-can"></i>
-                  <% end %>
-                </td>
+                <% if @cocktail.user == current_user %>
+                  <td>
+                    <%= link_to dose_path(dose), method: :delete, class: "tablecon-d", data: { confirm: "Are you sure?" } do %>
+                      <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
+                  </td>
+                <% end %>
               </tr>
             <% end %>
           <% end %>

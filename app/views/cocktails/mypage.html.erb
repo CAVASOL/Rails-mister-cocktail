@@ -17,8 +17,8 @@
             <%= cl_image_tag cocktail.photo.key, crop: :fill, class: "mypage-fav-img" %>
           </div>
           <div class="mypage-fav-contents">
-            <%= link_to  cocktail_favorites_path(cocktail), class: "fav-btn", method: :post do %>
-              <p class="mypage-fav-ibtn"><i class="far fa-heart"></i></p>
+            <%= link_to cocktail_favorites_path(cocktail), class: "fav-btn", method: :post do %>
+              <p class="mypage-fav-ibtn"><i class="fa-regular fa-bookmark"></i></p>
             <% end %>
             <%= link_to cocktail, class: "myfav-cardt" do %>
               <p class="myfav-cardt"><%= cocktail.name.titleize %></p>
@@ -33,7 +33,7 @@
           </div>
           <div class="mypage-fav-contents">
             <%= link_to cocktail_favorites_path(cocktail), class: "fav-btn", method: :delete do %>
-              <p class="mypage-fav-ibtn"><i class="fas fa-heart" style="color: #F07030"></i></p>
+              <p class="mypage-fav-ibtn"><i class="fa-solid fa-bookmark" style="color: #C26D62"></i></p>
             <% end %>
             <%= link_to cocktail, class: "myfav-cardt" do %>
               <p class="myfav-cardt"><%= cocktail.name.titleize %></p>

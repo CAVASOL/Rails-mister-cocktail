@@ -16,35 +16,35 @@
   <% elsif controller_name == "doses" && action_name == "new" %>
     <div class="icon">
       <%= link_to explore_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-magnifying-glass" style="color: #B43B3B"></i>
+        <i class="fa-solid fa-magnifying-glass" style="color: #F07030"></i>
         <p class="text" style="color: #F07030"> Explore </p>
       <% end %>
     </div>
   <% elsif controller_name == "ingredients" && action_name == "new" %>
     <div class="icon">
       <%= link_to root_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-magnifying-glass" style="color: #F07030"></i>
+        <i class="fa-solid fa-house" style="color: #F07030"></i>
         <p class="text" style="color: #F07030"> Home </p>
       <% end %>
     </div>
   <% elsif controller_name == "reviews" && action_name == "new" %>
     <div class="icon">
       <%= link_to root_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-magnifying-glass" style="color: #F07030"></i>
+        <i class="fa-solid fa-house" style="color: #F07030"></i>
         <p class="text" style="color: #F07030"> Home </p>
       <% end %>
     </div>
   <% elsif controller_name == "cocktails" && action_name == "explore" %>
     <div class="icon">
       <%= link_to root_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-martini-glass-citrus" style="color: #F07030"></i>
+        <i class="fa-solid fa-house" style="color: #F07030"></i>
         <p class="text" style="color: #F07030"> Home </p>
       <% end %>
     </div>
   <% else %>
     <div class="icon">
       <%= link_to cocktails_path, method: :get, class: "navbar-link" do %>
-        <i class="fa-solid fa-martini-glass-citrus"></i>
+        <i class="fa-solid fa-house"></i>
         <p class="text"> Home </p>
       <% end %>
     </div>

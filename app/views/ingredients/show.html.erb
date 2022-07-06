@@ -1,0 +1,13 @@
+<div class="top-nav">
+  <p><i class="fa-solid fa-angles-left"></i><%= link_to "Back", :back, class: "back" %></p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="show-title"><%= @ingredient.name.titleize %></p>
+  </div>
+</div>
+
+                  <%# <%= link_to ingredient_path(ingredient), method: :delete, class: "ingredient-delete", data: { confirm: "Are you sure?" } do %>
+                    <%# <i class="fa-regular fa-trash-can"></i> %>
+                  <%# <% end %>

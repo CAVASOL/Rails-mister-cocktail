@@ -16,7 +16,7 @@
 <div class="cocktails">
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail) do %>
-      <div class="cocktail-card" data-aos="zoon-in" style="background-image: url('<%= cl_image_path cocktail.photo.key %>')">
+      <div class="cocktail-card" data-aos="zoon-in" style="background-image: url('<%= cl_image_path cocktail.photo.key, crop: :fill, class: "cocktail-expl-img" %>')">
         <p class="name"> <%= cocktail.name.titleize %> </p>
       </div>
     <% end%>
