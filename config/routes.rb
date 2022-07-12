@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :doses, only: :destroy
-  resources :ingredients, only: %i[show edit update destroy]
+  resources :ingredients, only: %i[new show edit update destroy]
   resources :reviews, only: :destroy
 
   get 'profile', to: 'users#profile', as: 'profile'

@@ -48,6 +48,9 @@
     </div>
     <div class="ing-index-top10">
       <h3>All We have - List of Ingredient</h3>
+      <div class="new-ingredient">
+        <%= link_to "Add Ingredient", ingredient_new_path(@ingredient), cocktail: @cocktail, dose: @dose, class: "new-ingredient" %>
+      </div>
       <div class="top10-ing">
         <ul>
           <% @ingredients.each do |ingredient| %>

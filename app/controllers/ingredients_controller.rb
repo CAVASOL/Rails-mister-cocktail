@@ -6,6 +6,7 @@ class IngredientsController < ApplicationController
     @ingredients = Ingredient.all
     @ingredient = Ingredient.new
     @ingredients = Ingredient.where('name ILIKE ?', 'a%').order(:name)
+    @dose = Dose.new
 
     if params[:query].present?
       @query = params[:query]
@@ -23,7 +24,7 @@ class IngredientsController < ApplicationController
   def new
     @ingredients = Ingredient.all
     @ingredient = Ingredient.new
-    @cocktail = Cocktail.find(params[:cocktail_id])
+    @dose = Dose.new
   end
 
   def create
